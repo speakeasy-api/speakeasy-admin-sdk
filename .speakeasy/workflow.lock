@@ -4,7 +4,7 @@ targets:
     speakeasy-admin:
         source: SpeakeasyAdminAPI
         codeSamplesNamespace: speakeasy-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:56c5f3b9acc77a12783937bc5d0e2049e0d39a29c4b4e9bc8367da5e4074fd4f
+        codeSamplesRevisionDigest: sha256:173a3f5c4e1a388ef8575ee81e95845928b998bd2a53e8a0774d48abec23b012
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
