@@ -4,7 +4,7 @@ targets:
     speakeasy-admin:
         source: Speakeasy API
         codeSamplesNamespace: speakeasy-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:25fb4f7a00d96e47484f34d7f3f9f0d5903fcadc9d60bb98783c059e54c2cc5a
+        codeSamplesRevisionDigest: sha256:0dd989f824fa9a202ea56a327a94a220e04d4e82d49bf54267ee323205a040ce
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -18,6 +18,9 @@ workflow:
         speakeasy-admin:
             target: typescript
             source: Speakeasy API
+            publish:
+                npm:
+                    token: $npm_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/speakeasy-self/admin-sdk/speakeasy-api-typescript-code-samples
