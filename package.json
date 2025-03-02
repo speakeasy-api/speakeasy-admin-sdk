@@ -1,6 +1,6 @@
 {
   "name": "speakeasy-admin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "speakeasyapi",
   "type": "module",
   "bin": {
@@ -22,6 +22,10 @@
     }
   },
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speakeasy-api/speakeasy-admin-sdk.git"
+  },
   "scripts": {
     "test": "vitest run src --reporter=junit --outputFile=.speakeasy/reports/tests.xml --reporter=default",
     "check": "npm run test && npm run lint",
