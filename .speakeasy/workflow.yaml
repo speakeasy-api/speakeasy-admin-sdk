@@ -10,6 +10,9 @@ targets:
     speakeasy-admin:
         target: typescript
         source: Speakeasy API
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/admin-sdk/speakeasy-api-typescript-code-samples
