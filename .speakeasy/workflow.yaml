@@ -1,7 +1,7 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    Speakeasy API:
+    SpeakeasyAdminAPI:
         inputs:
             - location: openapi.yaml
         registry:
@@ -9,7 +9,7 @@ sources:
 targets:
     speakeasy-admin:
         target: typescript
-        source: Speakeasy API
+        source: SpeakeasyAdminAPI
         publish:
             npm:
                 token: $npm_token

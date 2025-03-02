@@ -2,14 +2,14 @@ speakeasyVersion: 1.508.1
 sources: {}
 targets:
     speakeasy-admin:
-        source: Speakeasy API
+        source: SpeakeasyAdminAPI
         codeSamplesNamespace: speakeasy-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:0dd989f824fa9a202ea56a327a94a220e04d4e82d49bf54267ee323205a040ce
+        codeSamplesRevisionDigest: sha256:56c5f3b9acc77a12783937bc5d0e2049e0d39a29c4b4e9bc8367da5e4074fd4f
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        Speakeasy API:
+        SpeakeasyAdminAPI:
             inputs:
                 - location: openapi.yaml
             registry:
@@ -17,7 +17,7 @@ workflow:
     targets:
         speakeasy-admin:
             target: typescript
-            source: Speakeasy API
+            source: SpeakeasyAdminAPI
             publish:
                 npm:
                     token: $npm_token
