@@ -6,8 +6,8 @@ Accept-Language: *
 Connection: keep-alive
 Cookie: 
 Sec-Fetch-Mode: cors
-User-Agent: speakeasy-sdk/typescript 0.0.4 2.536.0 0.4.0 speakeasy-admin
+User-Agent: speakeasy-sdk/typescript 0.1.0 2.536.0 0.4.0 speakeasy-admin
 X-Api-Key: value
-X-Speakeasy-Test-Instance-Id: 55A4F962-4477-FAED-DCF5-072F313F40C7
+X-Speakeasy-Test-Instance-Id: DBEEEBC2-4893-0F08-7D82-D361A03DB595
 X-Speakeasy-Test-Name: getOrganizations
 

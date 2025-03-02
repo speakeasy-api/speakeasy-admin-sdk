@@ -12,10 +12,10 @@ let value: GetOrganizationBillingLimitsResponse = {
     {
       organizationId: "<id>",
       targetType: "<value>",
-      operationLimit: 456150,
+      operationLimit: 617636,
       blocking: false,
-      createdAt: new Date("2024-09-15T00:05:11.728Z"),
-      updatedAt: new Date("2023-01-21T14:14:48.878Z"),
+      createdAt: new Date("2024-11-01T20:33:57.206Z"),
+      updatedAt: new Date("2024-11-07T03:49:54.674Z"),
     },
   ],
 };

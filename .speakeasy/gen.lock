@@ -1,18 +1,19 @@
 lockVersion: 2.0.0
 id: ec1799d3-a48d-4720-b04c-f7316aca04b1
 management:
-  docChecksum: dbf07abcd12f82ed6535cb196eee6870
+  docChecksum: 9c99a3e85c57d5a92b2449dffb3925fc
   docVersion: 0.4.0
-  speakeasyVersion: 1.508.1
+  speakeasyVersion: 1.508.0
   generationVersion: 2.536.0
-  releaseVersion: 0.0.4
-  configChecksum: f560746d1e3ca2782937928d3fda518e
+  releaseVersion: 0.1.0
+  configChecksum: 44932a5ee05be2db2fdea9828ccd3fc5
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true
 features:
   typescript:
     additionalDependencies: 0.1.0
+    constsAndDefaults: 0.1.11
     core: 3.21.3
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
@@ -45,6 +46,8 @@ generatedFiles:
   - docs/models/components/accounttype.md
   - docs/models/components/billingaddon.md
   - docs/models/components/billinglimit.md
+  - docs/models/components/clievent.md
+  - docs/models/components/interactiontype.md
   - docs/models/components/organization.md
   - docs/models/components/organizationbillingaddon.md
   - docs/models/components/organizationusage.md
@@ -65,6 +68,7 @@ generatedFiles:
   - docs/models/operations/getuserworkspacesrequest.md
   - docs/models/operations/getworkspacesrequest.md
   - docs/models/operations/getworkspaceusersrequest.md
+  - docs/models/operations/searcheventsrequest.md
   - docs/sdks/admin/README.md
   - docs/sdks/speakeasyadmin/README.md
   - eslint.config.mjs
@@ -86,6 +90,7 @@ generatedFiles:
   - src/__tests__/mockserver/internal/handler/doc.go
   - src/__tests__/mockserver/internal/handler/generated_handler.go
   - src/__tests__/mockserver/internal/handler/generated_handlers.go
+  - src/__tests__/mockserver/internal/handler/pathgetadminsearchevents.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizations.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidaddons.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidbillinglimits.go
@@ -108,7 +113,9 @@ generatedFiles:
   - src/__tests__/mockserver/internal/sdk/models/components/accounttype.go
   - src/__tests__/mockserver/internal/sdk/models/components/billingaddon.go
   - src/__tests__/mockserver/internal/sdk/models/components/billinglimit.go
+  - src/__tests__/mockserver/internal/sdk/models/components/clievent.go
   - src/__tests__/mockserver/internal/sdk/models/components/httpmetadata.go
+  - src/__tests__/mockserver/internal/sdk/models/components/interactiontype.go
   - src/__tests__/mockserver/internal/sdk/models/components/organization.go
   - src/__tests__/mockserver/internal/sdk/models/components/organizationbillingaddon.go
   - src/__tests__/mockserver/internal/sdk/models/components/organizationusage.go
@@ -126,6 +133,7 @@ generatedFiles:
   - src/__tests__/mockserver/internal/sdk/models/operations/getuserworkspaces.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getworkspaces.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getworkspaceusers.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/searchevents.go
   - src/__tests__/mockserver/internal/sdk/models/sdkerrors/error.go
   - src/__tests__/mockserver/internal/sdk/types/bigint.go
   - src/__tests__/mockserver/internal/sdk/types/date.go
@@ -157,6 +165,7 @@ generatedFiles:
   - src/funcs/adminGetUsers.ts
   - src/funcs/adminGetWorkspaceUsers.ts
   - src/funcs/adminGetWorkspaces.ts
+  - src/funcs/adminSearchEvents.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -198,10 +207,13 @@ generatedFiles:
   - src/mcp-server/tools/adminGetUsers.ts
   - src/mcp-server/tools/adminGetWorkspaceUsers.ts
   - src/mcp-server/tools/adminGetWorkspaces.ts
+  - src/mcp-server/tools/adminSearchEvents.ts
   - src/models/components/accounttype.ts
   - src/models/components/billingaddon.ts
   - src/models/components/billinglimit.ts
+  - src/models/components/clievent.ts
   - src/models/components/index.ts
+  - src/models/components/interactiontype.ts
   - src/models/components/organization.ts
   - src/models/components/organizationbillingaddon.ts
   - src/models/components/organizationusage.ts
@@ -225,6 +237,7 @@ generatedFiles:
   - src/models/operations/getworkspaces.ts
   - src/models/operations/getworkspaceusers.ts
   - src/models/operations/index.ts
+  - src/models/operations/searchevents.ts
   - src/sdk/admin.ts
   - src/sdk/index.ts
   - src/sdk/sdk.ts
@@ -327,6 +340,16 @@ examples:
           application/json: [{"id": "<id>", "email": "Wendy_Wuckert@gmail.com", "email_verified": false, "display_name": "Eloisa96", "confirmed": true, "whitelisted": false, "admin": false, "created_at": "2023-05-23T08:52:09.490Z", "updated_at": "2025-10-15T17:18:11.276Z"}]
         4XX:
           application/json: {"message": "<value>", "status_code": 434314}
+  searchEvents:
+    speakeasy-default-search-events:
+      parameters:
+        query:
+          limit: 250
+      responses:
+        "200":
+          application/json: [{"created_at": "1728456765507", "execution_id": "<id>", "interaction_type": "TOMBSTONE", "speakeasy_version": "<value>", "success": false, "workspace_id": "<id>"}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 294044}
 examplesVersion: 1.0.0
 generatedTests:
   getOrganizations: "2025-03-01T17:26:14-08:00"
@@ -339,3 +362,4 @@ generatedTests:
   getUserWorkspaces: "2025-03-01T17:26:14-08:00"
   getWorkspaces: "2025-03-01T17:26:14-08:00"
   getWorkspaceUsers: "2025-03-01T17:26:14-08:00"
+  searchEvents: "2025-03-02T13:24:17-06:00"

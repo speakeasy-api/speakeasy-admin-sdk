@@ -12,6 +12,7 @@ import (
 // GeneratedHandlers returns all generated handlers.
 func GeneratedHandlers(ctx context.Context, dir *logging.HTTPFileDirectory, rt *tracking.RequestTracker) []*GeneratedHandler {
 	return []*GeneratedHandler{
+		NewGeneratedHandler(ctx, http.MethodGet, "/admin/search_events", pathGetAdminSearchEvents(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations", pathGetV1AdminOrganizations(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/add_ons", pathGetV1AdminOrganizationsOrganizationIDAddOns(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/billing_limits", pathGetV1AdminOrganizationsOrganizationIDBillingLimits(dir, rt)),

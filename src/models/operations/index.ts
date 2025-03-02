@@ -12,3 +12,4 @@ export * from "./getusers.js";
 export * from "./getuserworkspaces.js";
 export * from "./getworkspaces.js";
 export * from "./getworkspaceusers.js";
+export * from "./searchevents.js";

@@ -18,6 +18,7 @@ import { tool$adminGetUsers } from "./tools/adminGetUsers.js";
 import { tool$adminGetUserWorkspaces } from "./tools/adminGetUserWorkspaces.js";
 import { tool$adminGetWorkspaces } from "./tools/adminGetWorkspaces.js";
 import { tool$adminGetWorkspaceUsers } from "./tools/adminGetWorkspaceUsers.js";
+import { tool$adminSearchEvents } from "./tools/adminSearchEvents.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
@@ -28,7 +29,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "SpeakeasyAdmin",
-    version: "0.0.4",
+    version: "0.1.0",
   });
 
   const client = new SpeakeasyAdminCore({
@@ -49,6 +50,7 @@ export function createMCPServer(deps: {
   tool(tool$adminGetUserWorkspaces);
   tool(tool$adminGetWorkspaces);
   tool(tool$adminGetWorkspaceUsers);
+  tool(tool$adminSearchEvents);
 
   return server;
 }

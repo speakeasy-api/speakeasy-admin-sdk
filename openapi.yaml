@@ -331,6 +331,79 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
+  /admin/search_events:
+    get:
+      summary: Returns a list of results that match the search criteria.
+      description: |-
+        Returns a list of results that match the search criteria.
+      operationId: searchEvents
+      x-speakeasy-mcp:
+        scopes: [read]
+      tags:
+        - Admin
+      parameters:
+        - in: query
+          name: generate_target 
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: execution_id
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: generate_gen_lock_id
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: interaction_type
+          required: false
+          schema:
+            $ref: "#/components/schemas/InteractionType"
+        - in: query
+          name: lint_report_digest
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: openapi_diff_report_digest
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: source_revision_digest
+          required: false
+          schema:
+            type: string
+        - in: query
+          name:  workspace_id
+          required: false
+          schema:
+            type: string 
+        - in: query
+          name: limit 
+          required: false
+          schema:
+            type: integer 
+            default: 250
+        - in: query
+          name: success
+          required: false
+          schema:
+            type: boolean 
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CliEvent"
+        "4XX":
+          $ref: "#/components/responses/default"
 components:
   responses:
     default:
@@ -656,6 +729,63 @@ components:
         - organization_id
         - add_on
         - created_at
+    InteractionType:
+      type: string
+      enum:
+        - "CI_EXEC"
+        - "CLI_EXEC"
+        - "LINT"
+        - "OPENAPI_DIFF"
+        - "TARGET_GENERATE"
+        - "TOMBSTONE"
+        - "AUTHENTICATE"
+        - "QUICKSTART"
+        - "RUN"
+        - "CONFIGURE"
+        - "PUBLISH"
+        - "TEST"
+        - "TARGET_GENERATE" 
+        - "PUBLISH"
+    CliEvent:
+      type: object
+      properties:
+        continuous_integration_environment:
+          type: string
+        created_at:
+          type: string
+        execution_id:
+          type: string
+        generate_repo_url:
+          type: string
+        generate_target:
+          type: string
+        generate_target_name:
+          type: string
+        gh_action_organization:
+          type: string
+        gh_action_run_link:
+          type: string
+        interaction_type:
+          $ref: '#/components/schemas/InteractionType'
+        lint_report_error_count:
+          type: integer
+        lint_report_info_count:
+          type: integer
+        lint_report_warning_count:
+          type: integer
+        speakeasy_version:
+          type: string
+        success:
+          type: boolean
+        workspace_id:
+          type: string
+      required:
+        - created_at
+        - execution_id
+        - interaction_type
+        - speakeasy_version
+        - success
+        - workspace_id
     Error:
       description: The `Status` type defines a logical error model
       properties:
