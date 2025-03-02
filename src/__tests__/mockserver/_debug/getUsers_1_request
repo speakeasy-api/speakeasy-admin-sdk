@@ -1,0 +1,13 @@
+GET /v1/admin/users HTTP/1.1
+Host: localhost:18080
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: *
+Connection: keep-alive
+Cookie: 
+Sec-Fetch-Mode: cors
+User-Agent: speakeasy-sdk/typescript 0.0.1 2.536.0 0.4.0 . speakeasy-admin
+X-Api-Key: value
+X-Speakeasy-Test-Instance-Id: 95F55B01-BD6E-A8CB-A37B-2D1D9F4F860B
+X-Speakeasy-Test-Name: getUsers
+

@@ -1,0 +1,5 @@
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json
+
+[{"admin":false,"confirmed":true,"created_at":"2023-05-23T08:52:09.49Z","display_name":"Eloisa96","email":"Wendy_Wuckert@gmail.com","email_verified":false,"id":"\u003cid\u003e","updated_at":"2025-10-15T17:18:11.276Z","whitelisted":false}]

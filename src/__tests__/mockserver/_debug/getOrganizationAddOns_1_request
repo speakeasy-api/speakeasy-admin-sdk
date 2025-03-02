@@ -1,0 +1,13 @@
+GET /v1/admin/organizations/%3Cid%3E/add_ons HTTP/1.1
+Host: localhost:18080
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: *
+Connection: keep-alive
+Cookie: 
+Sec-Fetch-Mode: cors
+User-Agent: speakeasy-sdk/typescript 0.0.1 2.536.0 0.4.0 . speakeasy-admin
+X-Api-Key: value
+X-Speakeasy-Test-Instance-Id: 167BD914-8FCA-392A-B5DB-9161A5015C57
+X-Speakeasy-Test-Name: getOrganizationAddOns
+

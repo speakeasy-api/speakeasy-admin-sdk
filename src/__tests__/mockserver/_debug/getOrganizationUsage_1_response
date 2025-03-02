@@ -1,0 +1,5 @@
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json
+
+{"allowed_languages":["\u003cvalue\u003e","\u003cvalue\u003e"],"total_allowed_languages":787633,"usage":[]}

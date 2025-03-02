@@ -1,0 +1,678 @@
+openapi: 3.0.3
+info:
+  description: The Speakeasy Admin API to manage internal operations on Organizations, Users, Workspaces, and Billing.
+  title: Speakeasy API
+  version: 0.4.0 .
+servers:
+  - url: https://api.prod.speakeasyapi.dev
+    x-speakeasy-server-id: prod
+security:
+  - APIKey: []
+tags:
+  - description: REST APIs for Admin utilities
+    name: Admin
+paths:
+  /v1/admin/organizations:
+    get:
+      summary: Returns a paginated list of all speakeasy organizations.
+      description: |-
+        Returns a paginated list of all speakeasy organizations.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getOrganizations
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of organizations to return.
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The number of organizations to skip before starting to return results.
+          required: false
+          schema:
+            type: integer
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Organizations
+                items:
+                  $ref: "#/components/schemas/Organization"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/organizations/{organizationID}/workspaces:
+    parameters:
+      - name: organizationID
+        in: path
+        required: true
+        description: Unique identifier of the organization.
+        schema:
+          type: string
+    get:
+      summary: Get all workspaces for a particular organization by ID
+      description: |-
+        Get all workspaces for a particular organization by ID
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getOrganizationWorkspaces
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Workspaces
+                items:
+                  $ref: "#/components/schemas/Workspace"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/organizations/{organizationID}/billing_limits:
+    parameters:
+      - name: organizationID
+        in: path
+        required: true
+        description: Unique identifier of the organization.
+        schema:
+          type: string
+    get:
+      summary: Get billing limits for a particular organization by ID.
+      description: |-
+        Gets billing limits for a particular organization by ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getOrganizationBillingLimits
+      responses:
+        "2XX":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  billing_limits:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/BillingLimit"
+                required:
+                  - billing_limits
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/organizations/{organizationID}/usage:
+    parameters:
+      - name: organizationID
+        in: path
+        required: true
+        description: Unique identifier of the organization.
+        schema:
+          type: string
+    get:
+      summary: Returns a billing usage summary by SDK language for a particular organization ID.
+      description: |-
+        Returns a billing usage summary by SDK language for a particular organization ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getOrganizationUsage
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrganizationUsageResponse"
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/organizations/add_ons:
+    post: # TODO: will update correctly to get on next speakeasy deploy
+      summary:  Returns a paginated list of all active billing add ons across all organizations.
+      description: |-
+        Returns a paginated list of all active billing add ons across all organizations.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getAddOns
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of organizations to return.
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The number of organizations to skip before starting to return results.
+          required: false
+          schema:
+            type: integer
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Organization Billing Add Ons
+                items:
+                  $ref: "#/components/schemas/OrganizationBillingAddOn"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/organizations/{organizationID}/add_ons:
+    parameters:
+      - name: organizationID
+        in: path
+        required: true
+        description: Unique identifier of the organization.
+        schema:
+          type: string
+    get:
+      summary: Get add ons for a particular organization by ID.
+      description: |-
+        Returns add ons for a particular organization by ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getOrganizationAddOns
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  add_ons:
+                    items:
+                      $ref: "#/components/schemas/BillingAddOn"
+                    type: array
+                required:
+                  - add_ons
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/users:
+    get:
+      summary: Returns a paginated list of all Speakeasy users.
+      description: |-
+        Returns a paginated list of all Speakeasy users.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getUsers
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of organizations to return.
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The number of organizations to skip before starting to return results.
+          required: false
+          schema:
+            type: integer
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Users
+                items:
+                  $ref: "#/components/schemas/User"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/users/{userID}/workspaces:
+    parameters:
+      - name: userID
+        in: path
+        required: true
+        description: Unique identifier of the user.
+        schema:
+          type: string
+    get:
+      summary: Returns all workspaces for a particular user by user ID.
+      description: |-
+        Returns all workspaces for a particular user by user ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getUserWorkspaces
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Workspaces
+                items:
+                  $ref: "#/components/schemas/Workspace"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/workspaces:
+    get:
+      summary: Returns a paginated list of all Speakeasy workspaces.
+      description: |-
+        Returns a paginated list of all Speakeasy workspaces.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getWorkspaces
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of organizations to return.
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The number of organizations to skip before starting to return results.
+          required: false
+          schema:
+            type: integer
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Workspaces
+                items:
+                  $ref: "#/components/schemas/Workspace"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+  /v1/admin/workspaces/{workspaceID}/users:
+    parameters:
+      - name: workspaceID
+        in: path
+        required: true
+        description: Unique identifier of the workspace.
+        schema:
+          type: string
+    get:
+      summary: Returns all users for a particular workspace by workspace ID.
+      description: |-
+        Returns all users for a particular workspace by workspace ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getWorkspaceUsers
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                title: Users
+                items:
+                  $ref: "#/components/schemas/User"
+                type: array
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
+components:
+  responses:
+    default:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+      description: Default error response
+  schemas:
+    FeatureFlag:
+      description: A feature flag is a key-value pair that can be used to enable or disable features.
+      properties:
+        feature_flag:
+          $ref: "#/components/schemas/WorkspaceFeatureFlag"
+        trial_ends_at:
+          type: string
+          format: date-time
+          nullable: true
+      required:
+        - feature_flag
+    WorkspaceFeatureFlag:
+      description: enum value workspace feature flag
+      type: string
+      x-speakeasy-unknown-values: allow
+      enum:
+        - schema_registry
+        - changes_report
+        - skip_schema_registry
+        - webhooks
+    Organization:
+      description: A speakeasy organization
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        slug:
+          type: string
+        account_type:
+          $ref: "#/components/schemas/AccountType"
+        telemetry_disabled:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        free_trial_expiry:
+          type: string
+          format: date-time
+          nullable: true
+        sso_connection_id:
+          type: string
+          nullable: true
+        sso_activated:
+          type: boolean
+        internal:
+          type: boolean
+      required:
+        - id
+        - name
+        - slug
+        - account_type
+        - telemetry_disabled
+        - sso_activated
+        - created_at
+        - updated_at
+      type: object
+    OrganizationUsageResponse:
+      description: A billing summary of organization usage
+      type: object
+      properties:
+        usage:
+          type: array
+          items:
+            $ref: "#/components/schemas/OrganizationUsage"
+        free_trial_expiry:
+          format: date-time
+          readOnly: true
+          type: string
+          description: Expiry date of the free trial, will be null if no trial
+        total_allowed_languages:
+          type: integer
+          description: Total number of allowed languages, -1 if unlimited
+        allowed_languages:
+          type: array
+          items:
+            type: string
+          description: List of allowed languages
+      required:
+        - usage
+        - total_allowed_languages
+        - allowed_languages
+    OrganizationUsage:
+      type: object
+      properties:
+        number_of_operations:
+          type: integer
+          description: Number of operations performed
+        max_operations:
+          type: integer
+          description: Maximum Number of operations per SDK specific in contract
+        language:
+          type: string
+          description: The programming language used
+        used_features:
+          type: array
+          items:
+            type: string
+          description: Features that have been used
+        accessible_features:
+          type: array
+          items:
+            type: string
+          description: Features that are accessible
+        accessible:
+          type: boolean
+          description: Indicates if the features are accessible
+        workspaces:
+          type: array
+          items:
+            type: string
+          description: List of workspace IDs
+        gen_lock_ids:
+          type: array
+          items:
+            type: string
+          description: List of generation lock IDs
+      required:
+        - number_of_operations
+        - max_operations
+        - language
+        - used_features
+        - accessible_features
+        - accessible
+        - workspaces
+        - gen_lock_ids
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user.
+        email:
+          type: string
+          description: Email address of the user.
+        email_verified:
+          type: boolean
+          description: Indicates whether the email address has been verified.
+        github_handle:
+          type: string
+          description: GitHub handle of the user.
+          nullable: true
+        display_name:
+          type: string
+          description: Display name of the user.
+        photo_url:
+          type: string
+          nullable: true
+          description: URL of the user's photo.
+        default_workspace_id:
+          type: string
+          description: Identifier of the default workspace.
+          nullable: true
+        confirmed:
+          type: boolean
+          description: Indicates whether the user has been confirmed.
+        whitelisted:
+          type: boolean
+          description: Indicates whether the user has been whitelisted.
+        last_login_at:
+          type: string
+          nullable: true
+          format: date-time
+          description: Timestamp of the last login.
+        admin:
+          type: boolean
+          description: Indicates whether the user is an admin.
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp of the user's creation.
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp of the user's last update.
+        internal:
+          type: boolean
+          description: Indicates whether the user is internal.
+        pylon_identity_hash:
+          type: string
+          description: Hash used for pylon identity verification returned on v1/user.
+        has_created_api_key:
+          type: boolean
+          description: Indicates whether the user has created an API key. Not always populated
+      required:
+        - id
+        - email
+        - email_verified
+        - display_name
+        - confirmed
+        - whitelisted
+        - admin
+        - created_at
+        - updated_at
+    AccountType:
+      type: string
+      x-speakeasy-unknown-values: allow
+      enum:
+        - free
+        - scale-up
+        - business
+        - enterprise
+    BillingAddOn:
+      type: string
+      x-speakeasy-unknown-values: allow
+      enum:
+        - webhooks
+        - sdk_testing
+        - custom_code_regions
+    Workspace:
+      description: A speakeasy workspace
+      properties:
+        created_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        organization_id:
+          type: string
+        slug:
+          type: string
+        inactive:
+          type: boolean
+        telemetry_disabled:
+          deprecated: true
+          description: Deprecated. Use organization.telemetry_disabled instead.
+          type: boolean
+        updated_at:
+          type: string
+          format: date-time
+        verified:
+          type: boolean
+      required:
+        - created_at
+        - id
+        - name
+        - organization_id
+        - slug
+        - updated_at
+        - verified
+      type: object
+    WorkspaceAndOrganization:
+      description: A workspace and organization
+      properties:
+        workspace:
+          $ref: "#/components/schemas/Workspace"
+        organization:
+          $ref: "#/components/schemas/Organization"
+      required:
+        - workspace
+        - organization
+      type: object
+    SSOMetadata:
+      description: SSO metadata for a workspace
+      properties:
+        sso_activated:
+          type: boolean
+        sso_domains:
+          type: array
+          items:
+            type: string
+      required:
+        - sso_activated
+        - sso_domains
+    BillingLimit:
+      type: object
+      properties:
+        organization_id:
+          type: string
+          description: The unique identifier for the organization.
+        target_type:
+          type: string
+          description: The type of target for the billing limit.
+        operation_limit:
+          type: integer
+          format: int64
+          description: The maximum allowed operations.
+        blocking:
+          type: boolean
+          description: Whether exceeding the limit blocks operations.
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the limit was created.
+        updated_at:
+          type: string
+          format: date-time
+          description: The timestamp when the limit was last updated.
+      required:
+        - organization_id
+        - target_type
+        - operation_limit
+        - blocking
+        - created_at
+        - updated_at
+    OrganizationBillingAddOn:
+      type: object
+      properties:
+        organization_id:
+          type: string
+          description: The unique identifier for the organization.
+        add_on:
+          $ref: '#/components/schemas/BillingAddOn'
+        created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the add-on was created.
+      required:
+        - organization_id
+        - add_on
+        - created_at
+    Error:
+      description: The `Status` type defines a logical error model
+      properties:
+        message:
+          description: A developer-facing error message.
+          type: string
+        status_code:
+          description: The HTTP status code
+          format: int32
+          type: integer
+      required:
+        - message
+        - status_code
+      type: object
+  securitySchemes:
+    APIKey:
+      description: The Admin API Key for the workspace
+      in: header
+      name: x-api-key
+      type: apiKey

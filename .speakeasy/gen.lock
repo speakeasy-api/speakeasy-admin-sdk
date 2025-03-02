@@ -1,0 +1,338 @@
+lockVersion: 2.0.0
+id: ec1799d3-a48d-4720-b04c-f7316aca04b1
+management:
+  docChecksum: 83b8e9baa9af0c2001c05c572be4230d
+  docVersion: 0.4.0 .
+  speakeasyVersion: 1.508.1
+  generationVersion: 2.536.0
+  releaseVersion: 0.0.1
+  configChecksum: 8ce6e98be1a5969081614325a56fc8b6
+features:
+  typescript:
+    additionalDependencies: 0.1.0
+    core: 3.21.3
+    defaultEnabledRetries: 0.1.0
+    deprecations: 2.81.1
+    devContainers: 2.90.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.1.2
+    globalSecurity: 2.82.13
+    globalSecurityCallbacks: 0.1.0
+    globalSecurityFlattening: 0.1.0
+    globalServerURLs: 2.82.4
+    mcpServer: 0.3.0
+    mockServer: 0.1.0
+    nullables: 0.1.1
+    openEnums: 0.1.1
+    responseFormat: 0.2.3
+    retries: 2.83.0
+    sdkHooks: 0.2.0
+    serverIDs: 2.81.2
+    tests: 0.15.0
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .npmignore
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/lib/utils/retryconfig.md
+  - docs/models/components/accounttype.md
+  - docs/models/components/billingaddon.md
+  - docs/models/components/billinglimit.md
+  - docs/models/components/organization.md
+  - docs/models/components/organizationbillingaddon.md
+  - docs/models/components/organizationusage.md
+  - docs/models/components/organizationusageresponse.md
+  - docs/models/components/security.md
+  - docs/models/components/user.md
+  - docs/models/components/workspace.md
+  - docs/models/errors/errort.md
+  - docs/models/operations/getaddonsrequest.md
+  - docs/models/operations/getorganizationaddonsrequest.md
+  - docs/models/operations/getorganizationaddonsresponse.md
+  - docs/models/operations/getorganizationbillinglimitsrequest.md
+  - docs/models/operations/getorganizationbillinglimitsresponse.md
+  - docs/models/operations/getorganizationsrequest.md
+  - docs/models/operations/getorganizationusagerequest.md
+  - docs/models/operations/getorganizationworkspacesrequest.md
+  - docs/models/operations/getusersrequest.md
+  - docs/models/operations/getuserworkspacesrequest.md
+  - docs/models/operations/getworkspacesrequest.md
+  - docs/models/operations/getworkspaceusersrequest.md
+  - docs/sdks/admin/README.md
+  - docs/sdks/speakeasyadmin/README.md
+  - eslint.config.mjs
+  - jsr.json
+  - package.json
+  - src/__tests__/admin.test.ts
+  - src/__tests__/assertions.ts
+  - src/__tests__/files.ts
+  - src/__tests__/mockserver/Dockerfile
+  - src/__tests__/mockserver/Makefile
+  - src/__tests__/mockserver/README.md
+  - src/__tests__/mockserver/go.mod
+  - src/__tests__/mockserver/go.sum
+  - src/__tests__/mockserver/internal/handler/assert/contenttype.go
+  - src/__tests__/mockserver/internal/handler/assert/header.go
+  - src/__tests__/mockserver/internal/handler/assert/parameter.go
+  - src/__tests__/mockserver/internal/handler/assert/pointer.go
+  - src/__tests__/mockserver/internal/handler/assert/security.go
+  - src/__tests__/mockserver/internal/handler/doc.go
+  - src/__tests__/mockserver/internal/handler/generated_handler.go
+  - src/__tests__/mockserver/internal/handler/generated_handlers.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizations.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidaddons.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidbillinglimits.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidusage.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidworkspaces.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminusers.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminusersuseridworkspaces.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminworkspaces.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminworkspacesworkspaceidusers.go
+  - src/__tests__/mockserver/internal/handler/pathpostv1adminorganizationsaddons.go
+  - src/__tests__/mockserver/internal/handler/values/files.go
+  - src/__tests__/mockserver/internal/logging/doc.go
+  - src/__tests__/mockserver/internal/logging/formats.go
+  - src/__tests__/mockserver/internal/logging/http_file.go
+  - src/__tests__/mockserver/internal/logging/http_logger.go
+  - src/__tests__/mockserver/internal/logging/levels.go
+  - src/__tests__/mockserver/internal/logging/logger.go
+  - src/__tests__/mockserver/internal/logging/oas_operation.go
+  - src/__tests__/mockserver/internal/logging/oas_operation_call.go
+  - src/__tests__/mockserver/internal/sdk/models/components/accounttype.go
+  - src/__tests__/mockserver/internal/sdk/models/components/billingaddon.go
+  - src/__tests__/mockserver/internal/sdk/models/components/billinglimit.go
+  - src/__tests__/mockserver/internal/sdk/models/components/httpmetadata.go
+  - src/__tests__/mockserver/internal/sdk/models/components/organization.go
+  - src/__tests__/mockserver/internal/sdk/models/components/organizationbillingaddon.go
+  - src/__tests__/mockserver/internal/sdk/models/components/organizationusage.go
+  - src/__tests__/mockserver/internal/sdk/models/components/organizationusageresponse.go
+  - src/__tests__/mockserver/internal/sdk/models/components/security.go
+  - src/__tests__/mockserver/internal/sdk/models/components/user.go
+  - src/__tests__/mockserver/internal/sdk/models/components/workspace.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getaddons.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationaddons.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationbillinglimits.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getorganizations.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationusage.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationworkspaces.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getusers.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getuserworkspaces.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getworkspaces.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getworkspaceusers.go
+  - src/__tests__/mockserver/internal/sdk/models/sdkerrors/error.go
+  - src/__tests__/mockserver/internal/sdk/types/bigint.go
+  - src/__tests__/mockserver/internal/sdk/types/date.go
+  - src/__tests__/mockserver/internal/sdk/types/datetime.go
+  - src/__tests__/mockserver/internal/sdk/types/decimal.go
+  - src/__tests__/mockserver/internal/sdk/types/pointers.go
+  - src/__tests__/mockserver/internal/sdk/utils/json.go
+  - src/__tests__/mockserver/internal/sdk/utils/reflect.go
+  - src/__tests__/mockserver/internal/sdk/utils/sort.go
+  - src/__tests__/mockserver/internal/server/doc.go
+  - src/__tests__/mockserver/internal/server/generated_handlers.go
+  - src/__tests__/mockserver/internal/server/internal_handlers.go
+  - src/__tests__/mockserver/internal/server/server.go
+  - src/__tests__/mockserver/internal/server/server_option.go
+  - src/__tests__/mockserver/internal/server/templates/log/index.html.tmpl
+  - src/__tests__/mockserver/internal/server/templates/log/operation.html.tmpl
+  - src/__tests__/mockserver/internal/server/templates/log/style.css.tmpl
+  - src/__tests__/mockserver/internal/tracking/requesttracker.go
+  - src/__tests__/mockserver/main.go
+  - src/__tests__/testclient.ts
+  - src/core.ts
+  - src/funcs/adminGetAddOns.ts
+  - src/funcs/adminGetOrganizationAddOns.ts
+  - src/funcs/adminGetOrganizationBillingLimits.ts
+  - src/funcs/adminGetOrganizationUsage.ts
+  - src/funcs/adminGetOrganizationWorkspaces.ts
+  - src/funcs/adminGetOrganizations.ts
+  - src/funcs/adminGetUserWorkspaces.ts
+  - src/funcs/adminGetUsers.ts
+  - src/funcs/adminGetWorkspaceUsers.ts
+  - src/funcs/adminGetWorkspaces.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
+  - src/index.ts
+  - src/lib/base64.ts
+  - src/lib/config.ts
+  - src/lib/dlv.ts
+  - src/lib/encodings.ts
+  - src/lib/env.ts
+  - src/lib/files.ts
+  - src/lib/http.ts
+  - src/lib/is-plain-object.ts
+  - src/lib/logger.ts
+  - src/lib/matchers.ts
+  - src/lib/primitives.ts
+  - src/lib/retries.ts
+  - src/lib/schemas.ts
+  - src/lib/sdks.ts
+  - src/lib/security.ts
+  - src/lib/url.ts
+  - src/mcp-server/build.mts
+  - src/mcp-server/cli.ts
+  - src/mcp-server/cli/start/command.ts
+  - src/mcp-server/cli/start/impl.ts
+  - src/mcp-server/console-logger.ts
+  - src/mcp-server/mcp-server.ts
+  - src/mcp-server/resources.ts
+  - src/mcp-server/scopes.ts
+  - src/mcp-server/server.ts
+  - src/mcp-server/shared.ts
+  - src/mcp-server/tools.ts
+  - src/mcp-server/tools/adminGetAddOns.ts
+  - src/mcp-server/tools/adminGetOrganizationAddOns.ts
+  - src/mcp-server/tools/adminGetOrganizationBillingLimits.ts
+  - src/mcp-server/tools/adminGetOrganizationUsage.ts
+  - src/mcp-server/tools/adminGetOrganizationWorkspaces.ts
+  - src/mcp-server/tools/adminGetOrganizations.ts
+  - src/mcp-server/tools/adminGetUserWorkspaces.ts
+  - src/mcp-server/tools/adminGetUsers.ts
+  - src/mcp-server/tools/adminGetWorkspaceUsers.ts
+  - src/mcp-server/tools/adminGetWorkspaces.ts
+  - src/models/components/accounttype.ts
+  - src/models/components/billingaddon.ts
+  - src/models/components/billinglimit.ts
+  - src/models/components/index.ts
+  - src/models/components/organization.ts
+  - src/models/components/organizationbillingaddon.ts
+  - src/models/components/organizationusage.ts
+  - src/models/components/organizationusageresponse.ts
+  - src/models/components/security.ts
+  - src/models/components/user.ts
+  - src/models/components/workspace.ts
+  - src/models/errors/apierror.ts
+  - src/models/errors/error.ts
+  - src/models/errors/httpclienterrors.ts
+  - src/models/errors/index.ts
+  - src/models/errors/sdkvalidationerror.ts
+  - src/models/operations/getaddons.ts
+  - src/models/operations/getorganizationaddons.ts
+  - src/models/operations/getorganizationbillinglimits.ts
+  - src/models/operations/getorganizations.ts
+  - src/models/operations/getorganizationusage.ts
+  - src/models/operations/getorganizationworkspaces.ts
+  - src/models/operations/getusers.ts
+  - src/models/operations/getuserworkspaces.ts
+  - src/models/operations/getworkspaces.ts
+  - src/models/operations/getworkspaceusers.ts
+  - src/models/operations/index.ts
+  - src/sdk/admin.ts
+  - src/sdk/index.ts
+  - src/sdk/sdk.ts
+  - src/types/async.ts
+  - src/types/blobs.ts
+  - src/types/constdatetime.ts
+  - src/types/enums.ts
+  - src/types/fp.ts
+  - src/types/index.ts
+  - src/types/operations.ts
+  - src/types/rfcdate.ts
+  - src/types/streams.ts
+  - tsconfig.json
+examples:
+  getOrganizations:
+    speakeasy-default-get-organizations:
+      responses:
+        2XX:
+          application/json: [{"id": "<id>", "name": "<value>", "slug": "<value>", "account_type": "business", "telemetry_disabled": true, "created_at": "2025-07-20T02:15:22.955Z", "updated_at": "2023-12-13T01:57:34.413Z", "sso_activated": true}, {"id": "<id>", "name": "<value>", "slug": "<value>", "account_type": "scale-up", "telemetry_disabled": false, "created_at": "2023-05-10T06:17:29.421Z", "updated_at": "2025-10-25T04:08:09.949Z", "sso_activated": false}, {"id": "<id>", "name": "<value>", "slug": "<value>", "account_type": "business", "telemetry_disabled": false, "created_at": "2025-01-01T16:21:27.523Z", "updated_at": "2025-04-11T15:08:17.681Z", "sso_activated": false}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 953350}
+  getOrganizationWorkspaces:
+    speakeasy-default-get-organization-workspaces:
+      parameters:
+        path:
+          organizationID: "<id>"
+      responses:
+        2XX:
+          application/json: [{"created_at": "2024-10-08T01:46:30.928Z", "id": "<id>", "name": "<value>", "organization_id": "<id>", "slug": "<value>", "updated_at": "2025-04-25T23:02:20.472Z", "verified": false}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 661565}
+  getOrganizationBillingLimits:
+    speakeasy-default-get-organization-billing-limits:
+      parameters:
+        path:
+          organizationID: "<id>"
+      responses:
+        2XX:
+          application/json: {"billing_limits": [{"organization_id": "<id>", "target_type": "<value>", "operation_limit": 244756, "blocking": false, "created_at": "2023-03-10T15:04:21.238Z", "updated_at": "2023-10-22T16:18:01.116Z"}]}
+        4XX:
+          application/json: {"message": "<value>", "status_code": 844744}
+  getOrganizationUsage:
+    speakeasy-default-get-organization-usage:
+      parameters:
+        path:
+          organizationID: "<id>"
+      responses:
+        2XX:
+          application/json: {"usage": [], "total_allowed_languages": 787633, "allowed_languages": ["<value>", "<value>"]}
+        4XX:
+          application/json: {"message": "<value>", "status_code": 977779}
+  getAddOns:
+    speakeasy-default-get-add-ons:
+      responses:
+        2XX:
+          application/json: [{"organization_id": "<id>", "add_on": "sdk_testing", "created_at": "2024-01-31T10:49:15.708Z"}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 415776}
+  getOrganizationAddOns:
+    speakeasy-default-get-organization-add-ons:
+      parameters:
+        path:
+          organizationID: "<id>"
+      responses:
+        2XX:
+          application/json: {"add_ons": ["webhooks"]}
+        4XX:
+          application/json: {"message": "<value>", "status_code": 819307}
+  getUsers:
+    speakeasy-default-get-users:
+      responses:
+        2XX:
+          application/json: [{"id": "<id>", "email": "Solon.Botsford28@yahoo.com", "email_verified": false, "display_name": "Paula.Trantow-Wisozk", "confirmed": true, "whitelisted": false, "admin": false, "created_at": "2025-12-31T21:46:36.485Z", "updated_at": "2023-11-20T11:07:55.022Z"}, {"id": "<id>", "email": "Dante.Koch82@yahoo.com", "email_verified": true, "display_name": "Dillan.Crona31", "confirmed": false, "whitelisted": true, "admin": true, "created_at": "2025-04-28T03:13:22.190Z", "updated_at": "2023-04-29T04:53:38.500Z"}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 97482}
+  getUserWorkspaces:
+    speakeasy-default-get-user-workspaces:
+      parameters:
+        path:
+          userID: "<id>"
+      responses:
+        2XX:
+          application/json: [{"created_at": "2023-09-22T05:07:03.340Z", "id": "<id>", "name": "<value>", "organization_id": "<id>", "slug": "<value>", "updated_at": "2025-07-08T12:21:15.399Z", "verified": false}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 504031}
+  getWorkspaces:
+    speakeasy-default-get-workspaces:
+      responses:
+        2XX:
+          application/json: [{"created_at": "2023-05-02T12:00:20.021Z", "id": "<id>", "name": "<value>", "organization_id": "<id>", "slug": "<value>", "updated_at": "2025-02-18T09:26:30.719Z", "verified": false}, {"created_at": "2024-09-24T01:26:57.125Z", "id": "<id>", "name": "<value>", "organization_id": "<id>", "slug": "<value>", "updated_at": "2024-05-07T16:49:06.396Z", "verified": false}, {"created_at": "2023-02-25T19:21:45.571Z", "id": "<id>", "name": "<value>", "organization_id": "<id>", "slug": "<value>", "updated_at": "2025-06-02T17:47:10.315Z", "verified": false}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 159988}
+  getWorkspaceUsers:
+    speakeasy-default-get-workspace-users:
+      parameters:
+        path:
+          workspaceID: "<id>"
+      responses:
+        2XX:
+          application/json: [{"id": "<id>", "email": "Wendy_Wuckert@gmail.com", "email_verified": false, "display_name": "Eloisa96", "confirmed": true, "whitelisted": false, "admin": false, "created_at": "2023-05-23T08:52:09.490Z", "updated_at": "2025-10-15T17:18:11.276Z"}]
+        4XX:
+          application/json: {"message": "<value>", "status_code": 434314}
+examplesVersion: 1.0.0
+generatedTests:
+  getOrganizations: "2025-03-01T17:26:14-08:00"
+  getOrganizationWorkspaces: "2025-03-01T17:26:14-08:00"
+  getOrganizationBillingLimits: "2025-03-01T17:26:14-08:00"
+  getOrganizationUsage: "2025-03-01T17:26:14-08:00"
+  getAddOns: "2025-03-01T17:26:14-08:00"
+  getOrganizationAddOns: "2025-03-01T17:26:14-08:00"
+  getUsers: "2025-03-01T17:26:14-08:00"
+  getUserWorkspaces: "2025-03-01T17:26:14-08:00"
+  getWorkspaces: "2025-03-01T17:26:14-08:00"
+  getWorkspaceUsers: "2025-03-01T17:26:14-08:00"

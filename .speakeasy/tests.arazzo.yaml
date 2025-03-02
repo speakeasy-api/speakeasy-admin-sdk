@@ -1,0 +1,296 @@
+arazzo: 1.0.0
+info:
+  title: Test Suite
+  summary: Created from openapi.yaml
+  version: 0.0.1
+sourceDescriptions:
+  - name: openapi.yaml
+    url: https://TBD.com
+    type: openapi
+workflows:
+  - workflowId: getOrganizations
+    steps:
+      - stepId: test
+        operationId: getOrganizations
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "account_type": "business",
+                  "telemetry_disabled": true,
+                  "created_at": "2025-07-20T02:15:22.955Z",
+                  "updated_at": "2023-12-13T01:57:34.413Z",
+                  "sso_activated": true
+                },
+                {
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "account_type": "scale-up",
+                  "telemetry_disabled": false,
+                  "created_at": "2023-05-10T06:17:29.421Z",
+                  "updated_at": "2025-10-25T04:08:09.949Z",
+                  "sso_activated": false
+                },
+                {
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "account_type": "business",
+                  "telemetry_disabled": false,
+                  "created_at": "2025-01-01T16:21:27.523Z",
+                  "updated_at": "2025-04-11T15:08:17.681Z",
+                  "sso_activated": false
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getOrganizationWorkspaces
+    steps:
+      - stepId: test
+        operationId: getOrganizationWorkspaces
+        parameters:
+          - name: organizationID
+            in: path
+            value: <id>
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "created_at": "2024-10-08T01:46:30.928Z",
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "organization_id": "\u003cid\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "updated_at": "2025-04-25T23:02:20.472Z",
+                  "verified": false
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getOrganizationBillingLimits
+    steps:
+      - stepId: test
+        operationId: getOrganizationBillingLimits
+        parameters:
+          - name: organizationID
+            in: path
+            value: <id>
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              {
+                "billing_limits": [
+                  {
+                    "organization_id": "\u003cid\u003e",
+                    "target_type": "\u003cvalue\u003e",
+                    "operation_limit": 244756,
+                    "blocking": false,
+                    "created_at": "2023-03-10T15:04:21.238Z",
+                    "updated_at": "2023-10-22T16:18:01.116Z"
+                  }
+                ]
+              }
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getOrganizationUsage
+    steps:
+      - stepId: test
+        operationId: getOrganizationUsage
+        parameters:
+          - name: organizationID
+            in: path
+            value: <id>
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              {
+                "usage": [],
+                "total_allowed_languages": 787633,
+                "allowed_languages": [
+                  "\u003cvalue\u003e",
+                  "\u003cvalue\u003e"
+                ]
+              }
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getAddOns
+    steps:
+      - stepId: test
+        operationId: getAddOns
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "organization_id": "\u003cid\u003e",
+                  "add_on": "sdk_testing",
+                  "created_at": "2024-01-31T10:49:15.708Z"
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getOrganizationAddOns
+    steps:
+      - stepId: test
+        operationId: getOrganizationAddOns
+        parameters:
+          - name: organizationID
+            in: path
+            value: <id>
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              {
+                "add_ons": [
+                  "webhooks"
+                ]
+              }
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getUsers
+    steps:
+      - stepId: test
+        operationId: getUsers
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "id": "\u003cid\u003e",
+                  "email": "Solon.Botsford28@yahoo.com",
+                  "email_verified": false,
+                  "display_name": "Paula.Trantow-Wisozk",
+                  "confirmed": true,
+                  "whitelisted": false,
+                  "admin": false,
+                  "created_at": "2025-12-31T21:46:36.485Z",
+                  "updated_at": "2023-11-20T11:07:55.022Z"
+                },
+                {
+                  "id": "\u003cid\u003e",
+                  "email": "Dante.Koch82@yahoo.com",
+                  "email_verified": true,
+                  "display_name": "Dillan.Crona31",
+                  "confirmed": false,
+                  "whitelisted": true,
+                  "admin": true,
+                  "created_at": "2025-04-28T03:13:22.190Z",
+                  "updated_at": "2023-04-29T04:53:38.500Z"
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getUserWorkspaces
+    steps:
+      - stepId: test
+        operationId: getUserWorkspaces
+        parameters:
+          - name: userID
+            in: path
+            value: <id>
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "created_at": "2023-09-22T05:07:03.340Z",
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "organization_id": "\u003cid\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "updated_at": "2025-07-08T12:21:15.399Z",
+                  "verified": false
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getWorkspaces
+    steps:
+      - stepId: test
+        operationId: getWorkspaces
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "created_at": "2023-05-02T12:00:20.021Z",
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "organization_id": "\u003cid\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "updated_at": "2025-02-18T09:26:30.719Z",
+                  "verified": false
+                },
+                {
+                  "created_at": "2024-09-24T01:26:57.125Z",
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "organization_id": "\u003cid\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "updated_at": "2024-05-07T16:49:06.396Z",
+                  "verified": false
+                },
+                {
+                  "created_at": "2023-02-25T19:21:45.571Z",
+                  "id": "\u003cid\u003e",
+                  "name": "\u003cvalue\u003e",
+                  "organization_id": "\u003cid\u003e",
+                  "slug": "\u003cvalue\u003e",
+                  "updated_at": "2025-06-02T17:47:10.315Z",
+                  "verified": false
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin
+  - workflowId: getWorkspaceUsers
+    steps:
+      - stepId: test
+        operationId: getWorkspaceUsers
+        parameters:
+          - name: workspaceID
+            in: path
+            value: <id>
+        successCriteria:
+          - condition: $statusCode == 2XX
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "id": "\u003cid\u003e",
+                  "email": "Wendy_Wuckert@gmail.com",
+                  "email_verified": false,
+                  "display_name": "Eloisa96",
+                  "confirmed": true,
+                  "whitelisted": false,
+                  "admin": false,
+                  "created_at": "2023-05-23T08:52:09.490Z",
+                  "updated_at": "2025-10-15T17:18:11.276Z"
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin

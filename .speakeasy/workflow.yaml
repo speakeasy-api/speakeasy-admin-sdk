@@ -1,0 +1,20 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Speakeasy API:
+        inputs:
+            - location: openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/speakeasy-self/admin-sdk/speakeasy-api
+targets:
+    speakeasy-admin:
+        target: typescript
+        source: Speakeasy API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/admin-sdk/speakeasy-api-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false
+        testing:
+            enabled: true

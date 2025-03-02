@@ -1,0 +1,28 @@
+speakeasyVersion: 1.508.1
+sources: {}
+targets:
+    speakeasy-admin:
+        source: Speakeasy API
+        codeSamplesNamespace: speakeasy-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:25fb4f7a00d96e47484f34d7f3f9f0d5903fcadc9d60bb98783c059e54c2cc5a
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Speakeasy API:
+            inputs:
+                - location: openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/speakeasy-self/admin-sdk/speakeasy-api
+    targets:
+        speakeasy-admin:
+            target: typescript
+            source: Speakeasy API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/speakeasy-self/admin-sdk/speakeasy-api-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false
+            testing:
+                enabled: true

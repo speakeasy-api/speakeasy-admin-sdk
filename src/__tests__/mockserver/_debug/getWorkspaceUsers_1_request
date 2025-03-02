@@ -1,0 +1,13 @@
+GET /v1/admin/workspaces/%3Cid%3E/users HTTP/1.1
+Host: localhost:18080
+Accept: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: *
+Connection: keep-alive
+Cookie: 
+Sec-Fetch-Mode: cors
+User-Agent: speakeasy-sdk/typescript 0.0.1 2.536.0 0.4.0 . speakeasy-admin
+X-Api-Key: value
+X-Speakeasy-Test-Instance-Id: 005F46F9-3692-73A8-F56F-76A4F4719755
+X-Speakeasy-Test-Name: getWorkspaceUsers
+
