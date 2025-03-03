@@ -27,10 +27,10 @@ import { APICall, APIPromise } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Returns a list of results that match the search criteria.
+ * Returns a list of CLI event results that match the search criteria.
  *
  * @remarks
- * Returns a list of results that match the search criteria.
+ * Returns a list of CLI event results that match the search criteria.
  */
 export function adminSearchEvents(
   client: SpeakeasyAdminCore,
@@ -87,7 +87,7 @@ async function $do(
   const payload = parsed.value;
   const body = null;
 
-  const path = pathToFunc("/admin/search_events")();
+  const path = pathToFunc("/v1/admin/search_events")();
 
   const query = encodeFormQuery({
     "execution_id": payload.execution_id,

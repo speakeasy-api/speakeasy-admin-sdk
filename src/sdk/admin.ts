@@ -190,10 +190,10 @@ export class Admin extends ClientSDK {
   }
 
   /**
-   * Returns a list of results that match the search criteria.
+   * Returns a list of CLI event results that match the search criteria.
    *
    * @remarks
-   * Returns a list of results that match the search criteria.
+   * Returns a list of CLI event results that match the search criteria.
    */
   async searchEvents(
     request: operations.SearchEventsRequest,

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: ec1799d3-a48d-4720-b04c-f7316aca04b1
 management:
-  docChecksum: 9c99a3e85c57d5a92b2449dffb3925fc
+  docChecksum: 159d0b2e8c9ee501df1432599b49d012
   docVersion: 0.4.0
-  speakeasyVersion: 1.508.0
+  speakeasyVersion: 1.508.1
   generationVersion: 2.536.0
-  releaseVersion: 0.1.0
-  configChecksum: 44932a5ee05be2db2fdea9828ccd3fc5
+  releaseVersion: 0.1.1
+  configChecksum: 78219bebbb65e705a59d69a92847bc8d
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true
@@ -90,12 +90,12 @@ generatedFiles:
   - src/__tests__/mockserver/internal/handler/doc.go
   - src/__tests__/mockserver/internal/handler/generated_handler.go
   - src/__tests__/mockserver/internal/handler/generated_handlers.go
-  - src/__tests__/mockserver/internal/handler/pathgetadminsearchevents.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizations.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidaddons.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidbillinglimits.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidusage.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidworkspaces.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminsearchevents.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminusers.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminusersuseridworkspaces.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminworkspaces.go

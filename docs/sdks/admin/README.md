@@ -17,7 +17,7 @@ REST APIs for Admin utilities
 * [getUserWorkspaces](#getuserworkspaces) - Returns all workspaces for a particular user by user ID.
 * [getWorkspaces](#getworkspaces) - Returns a paginated list of all Speakeasy workspaces.
 * [getWorkspaceUsers](#getworkspaceusers) - Returns all users for a particular workspace by workspace ID.
-* [searchEvents](#searchevents) - Returns a list of results that match the search criteria.
+* [searchEvents](#searchevents) - Returns a list of CLI event results that match the search criteria.
 
 ## getOrganizations
 
@@ -775,7 +775,7 @@ run();
 
 ## searchEvents
 
-Returns a list of results that match the search criteria.
+Returns a list of CLI event results that match the search criteria.
 
 ### Example Usage
 

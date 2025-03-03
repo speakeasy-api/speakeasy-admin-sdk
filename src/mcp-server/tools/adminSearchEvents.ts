@@ -12,9 +12,10 @@ const args = {
 
 export const tool$adminSearchEvents: ToolDefinition<typeof args> = {
   name: "admin_search-events",
-  description: `Returns a list of results that match the search criteria.
+  description:
+    `Returns a list of CLI event results that match the search criteria.
 
-Returns a list of results that match the search criteria.`,
+Returns a list of CLI event results that match the search criteria.`,
   scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {
