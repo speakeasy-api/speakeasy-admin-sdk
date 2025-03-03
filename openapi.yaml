@@ -331,11 +331,11 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
-  /admin/search_events:
+  /v1/admin/search_events:
     get:
-      summary: Returns a list of results that match the search criteria.
+      summary: Returns a list of CLI event results that match the search criteria.
       description: |-
-        Returns a list of results that match the search criteria.
+        Returns a list of CLI event results that match the search criteria.
       operationId: searchEvents
       x-speakeasy-mcp:
         scopes: [read]
@@ -395,7 +395,7 @@ paths:
             type: boolean 
       responses:
         "200":
-          description: Successful response
+          description: Successful CLI Event response
           content:
             application/json:
               schema:
