@@ -1,4 +1,4 @@
-GET /v1/admin/users HTTP/1.1
+GET /admin/search_events?limit=250 HTTP/1.1
 Host: localhost:18080
 Accept: application/json
 Accept-Encoding: gzip, deflate
@@ -8,6 +8,6 @@ Cookie:
 Sec-Fetch-Mode: cors
 User-Agent: speakeasy-sdk/typescript 0.1.0 2.536.0 0.4.0 speakeasy-admin
 X-Api-Key: value
-X-Speakeasy-Test-Instance-Id: 636D6ADE-BC22-3129-D297-B5FEB9556E74
-X-Speakeasy-Test-Name: getUsers
+X-Speakeasy-Test-Instance-Id: B4402D16-E35A-A99C-FB81-DF08DA532C47
+X-Speakeasy-Test-Name: searchEvents
 

@@ -299,3 +299,26 @@ test("Admin Get Workspace Users", async () => {
     },
   ]);
 });
+
+test("Admin Search Events", async () => {
+  const testHttpClient = createTestHTTPClient("searchEvents");
+
+  const speakeasyAdmin = new SpeakeasyAdmin({
+    serverURL: process.env["TEST_SERVER_URL"] ?? "http://localhost:18080",
+    httpClient: testHttpClient,
+    apiKey: process.env["SPEAKEASY_API_KEY"] ?? "value",
+  });
+
+  const result = await speakeasyAdmin.admin.searchEvents({});
+  expect(result).toBeDefined();
+  expect(result).toEqual([
+    {
+      createdAt: "1728456765507",
+      executionId: "<id>",
+      interactionType: "TOMBSTONE",
+      speakeasyVersion: "<value>",
+      success: false,
+      workspaceId: "<id>",
+    },
+  ]);
+});

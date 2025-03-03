@@ -9,7 +9,7 @@ import { GetOrganizationAddOnsResponse } from "speakeasy-admin/models/operations
 
 let value: GetOrganizationAddOnsResponse = {
   addOns: [
-    "sdk_testing",
+    "custom_code_regions",
   ],
 };
 ```

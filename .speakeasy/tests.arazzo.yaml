@@ -294,3 +294,28 @@ workflows:
               ]
             type: simple
     x-speakeasy-test-group: Admin
+  - workflowId: searchEvents
+    steps:
+      - stepId: test
+        operationId: searchEvents
+        parameters:
+          - name: limit
+            in: query
+            value: 250
+        successCriteria:
+          - condition: $statusCode == 200
+          - condition: $response.header.Content-Type == application/json
+          - context: $response.body
+            condition: |
+              [
+                {
+                  "created_at": "1728456765507",
+                  "execution_id": "\u003cid\u003e",
+                  "interaction_type": "TOMBSTONE",
+                  "speakeasy_version": "\u003cvalue\u003e",
+                  "success": false,
+                  "workspace_id": "\u003cid\u003e"
+                }
+              ]
+            type: simple
+    x-speakeasy-test-group: Admin

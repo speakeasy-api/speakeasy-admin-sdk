@@ -12,6 +12,7 @@ import { adminGetUsers } from "../funcs/adminGetUsers.js";
 import { adminGetUserWorkspaces } from "../funcs/adminGetUserWorkspaces.js";
 import { adminGetWorkspaces } from "../funcs/adminGetWorkspaces.js";
 import { adminGetWorkspaceUsers } from "../funcs/adminGetWorkspaceUsers.js";
+import { adminSearchEvents } from "../funcs/adminSearchEvents.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
@@ -182,6 +183,23 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<components.User>> {
     return unwrapAsync(adminGetWorkspaceUsers(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Returns a list of results that match the search criteria.
+   *
+   * @remarks
+   * Returns a list of results that match the search criteria.
+   */
+  async searchEvents(
+    request: operations.SearchEventsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<components.CliEvent>> {
+    return unwrapAsync(adminSearchEvents(
       this,
       request,
       options,

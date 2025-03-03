@@ -207,6 +207,7 @@ run();
 * [getUserWorkspaces](docs/sdks/admin/README.md#getuserworkspaces) - Returns all workspaces for a particular user by user ID.
 * [getWorkspaces](docs/sdks/admin/README.md#getworkspaces) - Returns a paginated list of all Speakeasy workspaces.
 * [getWorkspaceUsers](docs/sdks/admin/README.md#getworkspaceusers) - Returns all users for a particular workspace by workspace ID.
+* [searchEvents](docs/sdks/admin/README.md#searchevents) - Returns a list of results that match the search criteria.
 
 
 </details>
@@ -237,6 +238,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adminGetUserWorkspaces`](docs/sdks/admin/README.md#getuserworkspaces) - Returns all workspaces for a particular user by user ID.
 - [`adminGetWorkspaces`](docs/sdks/admin/README.md#getworkspaces) - Returns a paginated list of all Speakeasy workspaces.
 - [`adminGetWorkspaceUsers`](docs/sdks/admin/README.md#getworkspaceusers) - Returns all users for a particular workspace by workspace ID.
+- [`adminSearchEvents`](docs/sdks/admin/README.md#searchevents) - Returns a list of results that match the search criteria.
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
