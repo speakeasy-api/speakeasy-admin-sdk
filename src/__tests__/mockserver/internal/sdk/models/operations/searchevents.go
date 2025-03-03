@@ -103,7 +103,7 @@ func (o *SearchEventsRequest) GetSuccess() *bool {
 
 type SearchEventsResponse struct {
 	HTTPMeta components.HTTPMetadata `json:"-"`
-	// Successful response
+	// Successful CLI Event response
 	CliEvents []components.CliEvent
 }
 

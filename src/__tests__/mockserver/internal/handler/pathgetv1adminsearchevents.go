@@ -13,7 +13,7 @@ import (
 	"net/http"
 )
 
-func pathGetAdminSearchEvents(dir *logging.HTTPFileDirectory, rt *tracking.RequestTracker) http.HandlerFunc {
+func pathGetV1AdminSearchEvents(dir *logging.HTTPFileDirectory, rt *tracking.RequestTracker) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		test := req.Header.Get("x-speakeasy-test-name")
 		instanceID := req.Header.Get("x-speakeasy-test-instance-id")
