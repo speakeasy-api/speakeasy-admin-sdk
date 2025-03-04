@@ -293,6 +293,32 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
+  /v1/admin/users/{userID}:
+    parameters:
+      - name: userID
+        in: path
+        required: true
+        description: Unique identifier of the user.
+        schema:
+          type: string
+    get:
+      summary: Get a particular user by ID.
+      description: |-
+        Get a particular user by ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getUser
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
   /v1/admin/workspaces:
     get:
       summary: Returns a paginated list of all Speakeasy workspaces.
