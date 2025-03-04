@@ -357,6 +357,32 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
+  /v1/admin/workspaces/{workspaceID}:
+    parameters:
+      - name: workspaceID
+        in: path
+        required: true
+        description: Unique identifier of the workspace.
+        schema:
+          type: string
+    get:
+      summary: Get a particular workspace by ID.
+      description: |-
+        Get a particular workspace by ID.
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getWorkspace
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Workspace"
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
   /v1/admin/search_events:
     get:
       summary: Returns a list of CLI event results that match the search criteria.
