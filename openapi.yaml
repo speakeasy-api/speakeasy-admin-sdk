@@ -47,6 +47,32 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
+  /v1/admin/organizations/{organizationID}:
+    parameters:
+      - name: organizationID
+        in: path
+        required: true
+        description: Unique identifier of the organization.
+        schema:
+          type: string
+    get:
+      summary: Get a particular organization by ID
+      description: |-
+        Get a particular organization by ID
+      x-speakeasy-mcp:
+        scopes: [read]
+      operationId: getOrganization
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Organization"
+          description: OK
+        4XX:
+          $ref: "#/components/responses/default"
+      tags:
+        - Admin
   /v1/admin/organizations/{organizationID}/workspaces:
     parameters:
       - name: organizationID
