@@ -3,13 +3,16 @@
  */
 
 import { adminGetAddOns } from "../funcs/adminGetAddOns.js";
+import { adminGetOrganization } from "../funcs/adminGetOrganization.js";
 import { adminGetOrganizationAddOns } from "../funcs/adminGetOrganizationAddOns.js";
 import { adminGetOrganizationBillingLimits } from "../funcs/adminGetOrganizationBillingLimits.js";
 import { adminGetOrganizations } from "../funcs/adminGetOrganizations.js";
 import { adminGetOrganizationUsage } from "../funcs/adminGetOrganizationUsage.js";
 import { adminGetOrganizationWorkspaces } from "../funcs/adminGetOrganizationWorkspaces.js";
+import { adminGetUser } from "../funcs/adminGetUser.js";
 import { adminGetUsers } from "../funcs/adminGetUsers.js";
 import { adminGetUserWorkspaces } from "../funcs/adminGetUserWorkspaces.js";
+import { adminGetWorkspace } from "../funcs/adminGetWorkspace.js";
 import { adminGetWorkspaces } from "../funcs/adminGetWorkspaces.js";
 import { adminGetWorkspaceUsers } from "../funcs/adminGetWorkspaceUsers.js";
 import { adminSearchEvents } from "../funcs/adminSearchEvents.js";
@@ -30,6 +33,23 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<components.Organization>> {
     return unwrapAsync(adminGetOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+   *
+   * @remarks
+   * Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+   */
+  async getOrganization(
+    request: operations.GetOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<components.Organization> {
+    return unwrapAsync(adminGetOrganization(
       this,
       request,
       options,
@@ -156,6 +176,23 @@ export class Admin extends ClientSDK {
   }
 
   /**
+   * Get a particular user by ID or email.
+   *
+   * @remarks
+   * Get a particular user by ID or email.
+   */
+  async getUser(
+    request: operations.GetUserRequest,
+    options?: RequestOptions,
+  ): Promise<components.User> {
+    return unwrapAsync(adminGetUser(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Returns a paginated list of all Speakeasy workspaces.
    *
    * @remarks
@@ -183,6 +220,23 @@ export class Admin extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<components.User>> {
     return unwrapAsync(adminGetWorkspaceUsers(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+   *
+   * @remarks
+   * Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+   */
+  async getWorkspace(
+    request: operations.GetWorkspaceRequest,
+    options?: RequestOptions,
+  ): Promise<components.Workspace> {
+    return unwrapAsync(adminGetWorkspace(
       this,
       request,
       options,
