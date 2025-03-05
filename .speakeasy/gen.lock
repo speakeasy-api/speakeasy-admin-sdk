@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: ec1799d3-a48d-4720-b04c-f7316aca04b1
 management:
-  docChecksum: 159d0b2e8c9ee501df1432599b49d012
+  docChecksum: 97d371df0dceb43ca588f036948847d5
   docVersion: 0.4.0
-  speakeasyVersion: 1.508.1
-  generationVersion: 2.536.0
-  releaseVersion: 0.1.1
-  configChecksum: 78219bebbb65e705a59d69a92847bc8d
+  speakeasyVersion: 1.509.1
+  generationVersion: 2.539.1
+  releaseVersion: 0.2.0
+  configChecksum: 03ed5b8163754cf9bf9b0d2903c46b54
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true
@@ -24,7 +24,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
-    mcpServer: 0.3.0
+    mcpServer: 0.4.1
     mockServer: 0.1.0
     nullables: 0.1.1
     openEnums: 0.1.1
@@ -61,11 +61,14 @@ generatedFiles:
   - docs/models/operations/getorganizationaddonsresponse.md
   - docs/models/operations/getorganizationbillinglimitsrequest.md
   - docs/models/operations/getorganizationbillinglimitsresponse.md
+  - docs/models/operations/getorganizationrequest.md
   - docs/models/operations/getorganizationsrequest.md
   - docs/models/operations/getorganizationusagerequest.md
   - docs/models/operations/getorganizationworkspacesrequest.md
+  - docs/models/operations/getuserrequest.md
   - docs/models/operations/getusersrequest.md
   - docs/models/operations/getuserworkspacesrequest.md
+  - docs/models/operations/getworkspacerequest.md
   - docs/models/operations/getworkspacesrequest.md
   - docs/models/operations/getworkspaceusersrequest.md
   - docs/models/operations/searcheventsrequest.md
@@ -90,14 +93,17 @@ generatedFiles:
   - src/__tests__/mockserver/internal/handler/doc.go
   - src/__tests__/mockserver/internal/handler/generated_handler.go
   - src/__tests__/mockserver/internal/handler/generated_handlers.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminorganization.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizations.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidaddons.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidbillinglimits.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidusage.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminorganizationsorganizationidworkspaces.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminsearchevents.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminuser.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminusers.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminusersuseridworkspaces.go
+  - src/__tests__/mockserver/internal/handler/pathgetv1adminworkspace.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminworkspaces.go
   - src/__tests__/mockserver/internal/handler/pathgetv1adminworkspacesworkspaceidusers.go
   - src/__tests__/mockserver/internal/handler/pathpostv1adminorganizationsaddons.go
@@ -124,13 +130,16 @@ generatedFiles:
   - src/__tests__/mockserver/internal/sdk/models/components/user.go
   - src/__tests__/mockserver/internal/sdk/models/components/workspace.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getaddons.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getorganization.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationaddons.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationbillinglimits.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getorganizations.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationusage.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getorganizationworkspaces.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getuser.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getusers.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getuserworkspaces.go
+  - src/__tests__/mockserver/internal/sdk/models/operations/getworkspace.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getworkspaces.go
   - src/__tests__/mockserver/internal/sdk/models/operations/getworkspaceusers.go
   - src/__tests__/mockserver/internal/sdk/models/operations/searchevents.go
@@ -156,13 +165,16 @@ generatedFiles:
   - src/__tests__/testclient.ts
   - src/core.ts
   - src/funcs/adminGetAddOns.ts
+  - src/funcs/adminGetOrganization.ts
   - src/funcs/adminGetOrganizationAddOns.ts
   - src/funcs/adminGetOrganizationBillingLimits.ts
   - src/funcs/adminGetOrganizationUsage.ts
   - src/funcs/adminGetOrganizationWorkspaces.ts
   - src/funcs/adminGetOrganizations.ts
+  - src/funcs/adminGetUser.ts
   - src/funcs/adminGetUserWorkspaces.ts
   - src/funcs/adminGetUsers.ts
+  - src/funcs/adminGetWorkspace.ts
   - src/funcs/adminGetWorkspaceUsers.ts
   - src/funcs/adminGetWorkspaces.ts
   - src/funcs/adminSearchEvents.ts
@@ -198,13 +210,16 @@ generatedFiles:
   - src/mcp-server/shared.ts
   - src/mcp-server/tools.ts
   - src/mcp-server/tools/adminGetAddOns.ts
+  - src/mcp-server/tools/adminGetOrganization.ts
   - src/mcp-server/tools/adminGetOrganizationAddOns.ts
   - src/mcp-server/tools/adminGetOrganizationBillingLimits.ts
   - src/mcp-server/tools/adminGetOrganizationUsage.ts
   - src/mcp-server/tools/adminGetOrganizationWorkspaces.ts
   - src/mcp-server/tools/adminGetOrganizations.ts
+  - src/mcp-server/tools/adminGetUser.ts
   - src/mcp-server/tools/adminGetUserWorkspaces.ts
   - src/mcp-server/tools/adminGetUsers.ts
+  - src/mcp-server/tools/adminGetWorkspace.ts
   - src/mcp-server/tools/adminGetWorkspaceUsers.ts
   - src/mcp-server/tools/adminGetWorkspaces.ts
   - src/mcp-server/tools/adminSearchEvents.ts
@@ -227,13 +242,16 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/getaddons.ts
+  - src/models/operations/getorganization.ts
   - src/models/operations/getorganizationaddons.ts
   - src/models/operations/getorganizationbillinglimits.ts
   - src/models/operations/getorganizations.ts
   - src/models/operations/getorganizationusage.ts
   - src/models/operations/getorganizationworkspaces.ts
+  - src/models/operations/getuser.ts
   - src/models/operations/getusers.ts
   - src/models/operations/getuserworkspaces.ts
+  - src/models/operations/getworkspace.ts
   - src/models/operations/getworkspaces.ts
   - src/models/operations/getworkspaceusers.ts
   - src/models/operations/index.ts
@@ -350,6 +368,27 @@ examples:
           application/json: [{"created_at": "1728456765507", "execution_id": "<id>", "interaction_type": "TOMBSTONE", "speakeasy_version": "<value>", "success": false, "workspace_id": "<id>"}]
         4XX:
           application/json: {"message": "<value>", "status_code": 294044}
+  getOrganization:
+    speakeasy-default-get-organization:
+      responses:
+        2XX:
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "account_type": "scale-up", "telemetry_disabled": true, "created_at": "2023-07-23T03:40:42.924Z", "updated_at": "2024-11-01T02:54:44.454Z", "sso_activated": false}
+        4XX:
+          application/json: {"message": "<value>", "status_code": 982638}
+  getUser:
+    speakeasy-default-get-user:
+      responses:
+        2XX:
+          application/json: {"id": "<id>", "email": "Carolyne_Walsh@hotmail.com", "email_verified": true, "display_name": "King_Renner68", "confirmed": false, "whitelisted": false, "admin": false, "created_at": "2023-08-28T03:26:52.335Z", "updated_at": "2023-06-01T08:21:43.132Z"}
+        4XX:
+          application/json: {"message": "<value>", "status_code": 237845}
+  getWorkspace:
+    speakeasy-default-get-workspace:
+      responses:
+        2XX:
+          application/json: {"created_at": "2025-06-17T21:39:51.883Z", "id": "<id>", "name": "<value>", "organization_id": "<id>", "slug": "<value>", "updated_at": "2023-01-05T09:55:04.557Z", "verified": true}
+        4XX:
+          application/json: {"message": "<value>", "status_code": 244095}
 examplesVersion: 1.0.0
 generatedTests:
   getOrganizations: "2025-03-01T17:26:14-08:00"
@@ -363,3 +402,6 @@ generatedTests:
   getWorkspaces: "2025-03-01T17:26:14-08:00"
   getWorkspaceUsers: "2025-03-01T17:26:14-08:00"
   searchEvents: "2025-03-02T13:24:17-06:00"
+  getOrganization: "2025-03-05T01:21:07Z"
+  getUser: "2025-03-05T01:21:07Z"
+  getWorkspace: "2025-03-05T01:21:07Z"

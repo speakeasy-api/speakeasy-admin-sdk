@@ -200,6 +200,7 @@ run();
 ### [admin](docs/sdks/admin/README.md)
 
 * [getOrganizations](docs/sdks/admin/README.md#getorganizations) - Returns a paginated list of all speakeasy organizations.
+* [getOrganization](docs/sdks/admin/README.md#getorganization) - Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
 * [getOrganizationWorkspaces](docs/sdks/admin/README.md#getorganizationworkspaces) - Get all workspaces for a particular organization by ID
 * [getOrganizationBillingLimits](docs/sdks/admin/README.md#getorganizationbillinglimits) - Get billing limits for a particular organization by ID.
 * [getOrganizationUsage](docs/sdks/admin/README.md#getorganizationusage) - Returns a billing usage summary by SDK language for a particular organization ID.
@@ -207,8 +208,10 @@ run();
 * [getOrganizationAddOns](docs/sdks/admin/README.md#getorganizationaddons) - Get add ons for a particular organization by ID.
 * [getUsers](docs/sdks/admin/README.md#getusers) - Returns a paginated list of all Speakeasy users.
 * [getUserWorkspaces](docs/sdks/admin/README.md#getuserworkspaces) - Returns all workspaces for a particular user by user ID.
+* [getUser](docs/sdks/admin/README.md#getuser) - Get a particular user by ID or email.
 * [getWorkspaces](docs/sdks/admin/README.md#getworkspaces) - Returns a paginated list of all Speakeasy workspaces.
 * [getWorkspaceUsers](docs/sdks/admin/README.md#getworkspaceusers) - Returns all users for a particular workspace by workspace ID.
+* [getWorkspace](docs/sdks/admin/README.md#getworkspace) - Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
 * [searchEvents](docs/sdks/admin/README.md#searchevents) - Returns a list of CLI event results that match the search criteria.
 
 
@@ -231,13 +234,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 <summary>Available standalone functions</summary>
 
 - [`adminGetAddOns`](docs/sdks/admin/README.md#getaddons) - Returns a paginated list of all active billing add ons across all organizations.
+- [`adminGetOrganization`](docs/sdks/admin/README.md#getorganization) - Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
 - [`adminGetOrganizationAddOns`](docs/sdks/admin/README.md#getorganizationaddons) - Get add ons for a particular organization by ID.
 - [`adminGetOrganizationBillingLimits`](docs/sdks/admin/README.md#getorganizationbillinglimits) - Get billing limits for a particular organization by ID.
 - [`adminGetOrganizations`](docs/sdks/admin/README.md#getorganizations) - Returns a paginated list of all speakeasy organizations.
 - [`adminGetOrganizationUsage`](docs/sdks/admin/README.md#getorganizationusage) - Returns a billing usage summary by SDK language for a particular organization ID.
 - [`adminGetOrganizationWorkspaces`](docs/sdks/admin/README.md#getorganizationworkspaces) - Get all workspaces for a particular organization by ID
+- [`adminGetUser`](docs/sdks/admin/README.md#getuser) - Get a particular user by ID or email.
 - [`adminGetUsers`](docs/sdks/admin/README.md#getusers) - Returns a paginated list of all Speakeasy users.
 - [`adminGetUserWorkspaces`](docs/sdks/admin/README.md#getuserworkspaces) - Returns all workspaces for a particular user by user ID.
+- [`adminGetWorkspace`](docs/sdks/admin/README.md#getworkspace) - Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
 - [`adminGetWorkspaces`](docs/sdks/admin/README.md#getworkspaces) - Returns a paginated list of all Speakeasy workspaces.
 - [`adminGetWorkspaceUsers`](docs/sdks/admin/README.md#getworkspaceusers) - Returns all users for a particular workspace by workspace ID.
 - [`adminSearchEvents`](docs/sdks/admin/README.md#searchevents) - Returns a list of CLI event results that match the search criteria.

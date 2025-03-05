@@ -3,13 +3,16 @@
  */
 
 export * from "./getaddons.js";
+export * from "./getorganization.js";
 export * from "./getorganizationaddons.js";
 export * from "./getorganizationbillinglimits.js";
 export * from "./getorganizations.js";
 export * from "./getorganizationusage.js";
 export * from "./getorganizationworkspaces.js";
+export * from "./getuser.js";
 export * from "./getusers.js";
 export * from "./getuserworkspaces.js";
+export * from "./getworkspace.js";
 export * from "./getworkspaces.js";
 export * from "./getworkspaceusers.js";
 export * from "./searchevents.js";

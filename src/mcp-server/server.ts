@@ -9,19 +9,23 @@ import type { ConsoleLogger } from "./console-logger.js";
 import { MCPScope, mcpScopes } from "./scopes.js";
 import { createRegisterTool } from "./tools.js";
 import { tool$adminGetAddOns } from "./tools/adminGetAddOns.js";
+import { tool$adminGetOrganization } from "./tools/adminGetOrganization.js";
 import { tool$adminGetOrganizationAddOns } from "./tools/adminGetOrganizationAddOns.js";
 import { tool$adminGetOrganizationBillingLimits } from "./tools/adminGetOrganizationBillingLimits.js";
 import { tool$adminGetOrganizations } from "./tools/adminGetOrganizations.js";
 import { tool$adminGetOrganizationUsage } from "./tools/adminGetOrganizationUsage.js";
 import { tool$adminGetOrganizationWorkspaces } from "./tools/adminGetOrganizationWorkspaces.js";
+import { tool$adminGetUser } from "./tools/adminGetUser.js";
 import { tool$adminGetUsers } from "./tools/adminGetUsers.js";
 import { tool$adminGetUserWorkspaces } from "./tools/adminGetUserWorkspaces.js";
+import { tool$adminGetWorkspace } from "./tools/adminGetWorkspace.js";
 import { tool$adminGetWorkspaces } from "./tools/adminGetWorkspaces.js";
 import { tool$adminGetWorkspaceUsers } from "./tools/adminGetWorkspaceUsers.js";
 import { tool$adminSearchEvents } from "./tools/adminSearchEvents.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
+  allowedTools?: string[] | undefined;
   scopes?: MCPScope[] | undefined;
   serverURL?: string | undefined;
   apiKey?: SDKOptions["apiKey"] | undefined;
@@ -29,7 +33,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "SpeakeasyAdmin",
-    version: "0.1.1",
+    version: "0.2.0",
   });
 
   const client = new SpeakeasyAdminCore({
@@ -38,9 +42,17 @@ export function createMCPServer(deps: {
     server: deps.server,
   });
   const scopes = new Set(deps.scopes ?? mcpScopes);
-  const tool = createRegisterTool(deps.logger, server, client, scopes);
+  const allowedTools = deps.allowedTools && new Set(deps.allowedTools);
+  const tool = createRegisterTool(
+    deps.logger,
+    server,
+    client,
+    scopes,
+    allowedTools,
+  );
 
   tool(tool$adminGetOrganizations);
+  tool(tool$adminGetOrganization);
   tool(tool$adminGetOrganizationWorkspaces);
   tool(tool$adminGetOrganizationBillingLimits);
   tool(tool$adminGetOrganizationUsage);
@@ -48,8 +60,10 @@ export function createMCPServer(deps: {
   tool(tool$adminGetOrganizationAddOns);
   tool(tool$adminGetUsers);
   tool(tool$adminGetUserWorkspaces);
+  tool(tool$adminGetUser);
   tool(tool$adminGetWorkspaces);
   tool(tool$adminGetWorkspaceUsers);
+  tool(tool$adminGetWorkspace);
   tool(tool$adminSearchEvents);
 
   return server;
