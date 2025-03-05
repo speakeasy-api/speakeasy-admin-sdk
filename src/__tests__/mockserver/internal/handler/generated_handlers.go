@@ -13,14 +13,17 @@ import (
 func GeneratedHandlers(ctx context.Context, dir *logging.HTTPFileDirectory, rt *tracking.RequestTracker) []*GeneratedHandler {
 	return []*GeneratedHandler{
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations", pathGetV1AdminOrganizations(dir, rt)),
+		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}", pathGetV1AdminOrganizationsOrganizationID(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/add_ons", pathGetV1AdminOrganizationsOrganizationIDAddOns(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/billing_limits", pathGetV1AdminOrganizationsOrganizationIDBillingLimits(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/usage", pathGetV1AdminOrganizationsOrganizationIDUsage(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/workspaces", pathGetV1AdminOrganizationsOrganizationIDWorkspaces(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/search_events", pathGetV1AdminSearchEvents(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/users", pathGetV1AdminUsers(dir, rt)),
+		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/users/{userID}", pathGetV1AdminUsersUserID(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/users/{userID}/workspaces", pathGetV1AdminUsersUserIDWorkspaces(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/workspaces", pathGetV1AdminWorkspaces(dir, rt)),
+		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/workspaces/{workspaceID}", pathGetV1AdminWorkspacesWorkspaceID(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/workspaces/{workspaceID}/users", pathGetV1AdminWorkspacesWorkspaceIDUsers(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodPost, "/v1/admin/organizations/add_ons", pathPostV1AdminOrganizationsAddOns(dir, rt)),
 	}

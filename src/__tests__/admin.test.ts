@@ -322,3 +322,78 @@ test("Admin Search Events", async () => {
     },
   ]);
 });
+
+test("Admin Get Organization", async () => {
+  const testHttpClient = createTestHTTPClient("getOrganization");
+
+  const speakeasyAdmin = new SpeakeasyAdmin({
+    serverURL: process.env["TEST_SERVER_URL"] ?? "http://localhost:18080",
+    httpClient: testHttpClient,
+    apiKey: process.env["SPEAKEASY_API_KEY"] ?? "value",
+  });
+
+  const result = await speakeasyAdmin.admin.getOrganization({
+    organizationID: "<id>",
+  });
+  expect(result).toBeDefined();
+  expect(result).toEqual({
+    id: "<id>",
+    name: "<value>",
+    slug: "<value>",
+    accountType: "scale-up",
+    telemetryDisabled: true,
+    createdAt: new Date("2023-07-23T03:40:42.924Z"),
+    updatedAt: new Date("2024-11-01T02:54:44.454Z"),
+    ssoActivated: false,
+  });
+});
+
+test("Admin Get User", async () => {
+  const testHttpClient = createTestHTTPClient("getUser");
+
+  const speakeasyAdmin = new SpeakeasyAdmin({
+    serverURL: process.env["TEST_SERVER_URL"] ?? "http://localhost:18080",
+    httpClient: testHttpClient,
+    apiKey: process.env["SPEAKEASY_API_KEY"] ?? "value",
+  });
+
+  const result = await speakeasyAdmin.admin.getUser({
+    userID: "<id>",
+  });
+  expect(result).toBeDefined();
+  expect(result).toEqual({
+    id: "<id>",
+    email: "Carolyne_Walsh@hotmail.com",
+    emailVerified: true,
+    displayName: "King_Renner68",
+    confirmed: false,
+    whitelisted: false,
+    admin: false,
+    createdAt: new Date("2023-08-28T03:26:52.335Z"),
+    updatedAt: new Date("2023-06-01T08:21:43.132Z"),
+  });
+});
+
+test("Admin Get Workspace", async () => {
+  const testHttpClient = createTestHTTPClient("getWorkspace");
+
+  const speakeasyAdmin = new SpeakeasyAdmin({
+    serverURL: process.env["TEST_SERVER_URL"] ?? "http://localhost:18080",
+    httpClient: testHttpClient,
+    apiKey: process.env["SPEAKEASY_API_KEY"] ?? "value",
+  });
+
+  const result = await speakeasyAdmin.admin.getWorkspace({
+    workspaceID: "<id>",
+  });
+  expect(result).toBeDefined();
+  expect(result).toEqual({
+    createdAt: new Date("2025-06-17T21:39:51.883Z"),
+    id: "<id>",
+    name: "<value>",
+    organizationId: "<id>",
+    slug: "<value>",
+    updatedAt: new Date("2023-01-05T09:55:04.557Z"),
+    verified: true,
+  });
+});

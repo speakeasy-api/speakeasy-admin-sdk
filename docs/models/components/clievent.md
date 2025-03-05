@@ -6,7 +6,7 @@
 import { CliEvent } from "speakeasy-admin/models/components";
 
 let value: CliEvent = {
-  createdAt: "1723811822611",
+  createdAt: "1723983155009",
   executionId: "<id>",
   interactionType: "AUTHENTICATE",
   speakeasyVersion: "<value>",
