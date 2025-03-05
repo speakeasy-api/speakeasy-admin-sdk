@@ -47,18 +47,24 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
-  /v1/admin/organizations/{organizationID}:
+  /v1/admin/organization:
     parameters:
-      - name: organizationID
-        in: path
-        required: true
+      - name: organization_id
+        in: query
+        required: false
         description: Unique identifier of the organization.
         schema:
           type: string
+      - name: organization_slug
+        in: query
+        required: false
+        description: URL-friendly identifier of the organization.
+        schema:
+          type: string
     get:
-      summary: Get a particular organization by ID
+      summary: Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
       description: |-
-        Get a particular organization by ID
+        Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
       x-speakeasy-mcp:
         scopes: [read]
       operationId: getOrganization
@@ -293,18 +299,24 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
-  /v1/admin/users/{userID}:
+  /v1/admin/user:
     parameters:
-      - name: userID
-        in: path
-        required: true
+      - name: user_id
+        in: query
+        required: false
         description: Unique identifier of the user.
         schema:
           type: string
+      - name: email
+        in: query
+        required: false
+        description: Email address of the user.
+        schema:
+          type: string
     get:
-      summary: Get a particular user by ID.
+      summary: Get a particular user by ID or email.
       description: |-
-        Get a particular user by ID.
+        Get a particular user by ID or email.
       x-speakeasy-mcp:
         scopes: [read]
       operationId: getUser
@@ -383,18 +395,30 @@ paths:
           $ref: "#/components/responses/default"
       tags:
         - Admin
-  /v1/admin/workspaces/{workspaceID}:
+  /v1/admin/workspace:
     parameters:
-      - name: workspaceID
-        in: path
-        required: true
+      - name: workspace_id
+        in: query
+        required: false
         description: Unique identifier of the workspace.
         schema:
           type: string
+      - name: organization_slug
+        in: query
+        required: false
+        description: URL-friendly identifier of the organization.
+        schema:
+          type: string
+      - name: workspace_slug
+        in: query
+        required: false
+        description: URL-friendly identifier of the workspace.
+        schema:
+          type: string
     get:
-      summary: Get a particular workspace by ID.
+      summary: Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
       description: |-
-        Get a particular workspace by ID.
+        Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
       x-speakeasy-mcp:
         scopes: [read]
       operationId: getWorkspace
