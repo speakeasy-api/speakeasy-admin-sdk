@@ -97,8 +97,11 @@ Add the following server definition to your `claude_desktop_config.json` file:
         "-y", "--package", "speakeasy-admin",
         "--",
         "mcp", "start",
-        "--api-key", "..."
-      ]
+        "--scope", "read"
+      ],
+      "env": {
+        "SPEAKEASY_API_KEY": "<YOUR_SPEAKEASY_SELF_WORKSPACE_API_KEY>"
+      }
     }
   }
 }
