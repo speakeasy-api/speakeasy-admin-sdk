@@ -14,6 +14,7 @@ func GeneratedHandlers(ctx context.Context, dir *logging.HTTPFileDirectory, rt *
 	return []*GeneratedHandler{
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organization", pathGetV1AdminOrganization(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations", pathGetV1AdminOrganizations(dir, rt)),
+		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/add_ons", pathGetV1AdminOrganizationsAddOns(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/add_ons", pathGetV1AdminOrganizationsOrganizationIDAddOns(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/billing_limits", pathGetV1AdminOrganizationsOrganizationIDBillingLimits(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/organizations/{organizationID}/usage", pathGetV1AdminOrganizationsOrganizationIDUsage(dir, rt)),
@@ -25,6 +26,5 @@ func GeneratedHandlers(ctx context.Context, dir *logging.HTTPFileDirectory, rt *
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/workspace", pathGetV1AdminWorkspace(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/workspaces", pathGetV1AdminWorkspaces(dir, rt)),
 		NewGeneratedHandler(ctx, http.MethodGet, "/v1/admin/workspaces/{workspaceID}/users", pathGetV1AdminWorkspacesWorkspaceIDUsers(dir, rt)),
-		NewGeneratedHandler(ctx, http.MethodPost, "/v1/admin/organizations/add_ons", pathPostV1AdminOrganizationsAddOns(dir, rt)),
 	}
 }
