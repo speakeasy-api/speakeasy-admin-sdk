@@ -29,3 +29,13 @@ Based on:
 - [typescript v0.2.0] .
 ### Releases
 - [NPM v0.2.0] https://www.npmjs.com/package/speakeasy-admin/v/0.2.0 - .
+
+## 2025-03-06 18:32:37
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.512.0 (2.544.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.3.0] .
+### Releases
+- [NPM v0.3.0] https://www.npmjs.com/package/speakeasy-admin/v/0.3.0 - .

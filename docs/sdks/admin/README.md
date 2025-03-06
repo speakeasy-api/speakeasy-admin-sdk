@@ -8,7 +8,7 @@ REST APIs for Admin utilities
 ### Available Operations
 
 * [getOrganizations](#getorganizations) - Returns a paginated list of all speakeasy organizations.
-* [getOrganization](#getorganization) - Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+* [getOrganization](#getorganization) - Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snakecase and often match the organization name converted to snake case.
 * [getOrganizationWorkspaces](#getorganizationworkspaces) - Get all workspaces for a particular organization by ID
 * [getOrganizationBillingLimits](#getorganizationbillinglimits) - Get billing limits for a particular organization by ID.
 * [getOrganizationUsage](#getorganizationusage) - Returns a billing usage summary by SDK language for a particular organization ID.
@@ -19,7 +19,7 @@ REST APIs for Admin utilities
 * [getUser](#getuser) - Get a particular user by ID or email.
 * [getWorkspaces](#getworkspaces) - Returns a paginated list of all Speakeasy workspaces.
 * [getWorkspaceUsers](#getworkspaceusers) - Returns all users for a particular workspace by workspace ID.
-* [getWorkspace](#getworkspace) - Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+* [getWorkspace](#getworkspace) - Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snake case and often match the name of the entity converted to snake case.
 * [searchEvents](#searchevents) - Returns a list of CLI event results that match the search criteria.
 
 ## getOrganizations
@@ -97,7 +97,7 @@ run();
 
 ## getOrganization
 
-Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snakecase and often match the organization name converted to snake case.
 
 ### Example Usage
 
@@ -924,7 +924,7 @@ run();
 
 ## getWorkspace
 
-Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snake case and often match the name of the entity converted to snake case.
 
 ### Example Usage
 

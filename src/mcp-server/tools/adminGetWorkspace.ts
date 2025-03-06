@@ -13,9 +13,9 @@ const args = {
 export const tool$adminGetWorkspace: ToolDefinition<typeof args> = {
   name: "admin_get-workspace",
   description:
-    `Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)
+    `Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snake case and often match the name of the entity converted to snake case.
 
-Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk)`,
+Get a particular workspace by ID or org and workspace slug. Both slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snake case and often match the name of the entity converted to snake case.`,
   scopes: ["read"],
   args,
   tool: async (client, args, ctx) => {

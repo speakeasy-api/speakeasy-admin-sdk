@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: ec1799d3-a48d-4720-b04c-f7316aca04b1
 management:
-  docChecksum: 97d371df0dceb43ca588f036948847d5
+  docChecksum: 74bb85478199f2e32a852ac99c545433
   docVersion: 0.4.0
-  speakeasyVersion: 1.509.1
-  generationVersion: 2.539.1
-  releaseVersion: 0.2.0
-  configChecksum: 03ed5b8163754cf9bf9b0d2903c46b54
+  speakeasyVersion: 1.512.0
+  generationVersion: 2.544.0
+  releaseVersion: 0.3.0
+  configChecksum: c110ea2b97ff592cb53307444858061c
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true
@@ -24,7 +24,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
-    mcpServer: 0.4.1
+    mcpServer: 0.6.0
     mockServer: 0.1.0
     nullables: 0.1.1
     openEnums: 0.1.1
@@ -32,7 +32,7 @@ features:
     retries: 2.83.0
     sdkHooks: 0.2.0
     serverIDs: 2.81.2
-    tests: 0.15.0
+    tests: 0.16.0
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
@@ -203,6 +203,7 @@ generatedFiles:
   - src/mcp-server/cli/start/command.ts
   - src/mcp-server/cli/start/impl.ts
   - src/mcp-server/console-logger.ts
+  - src/mcp-server/extensions.ts
   - src/mcp-server/mcp-server.ts
   - src/mcp-server/resources.ts
   - src/mcp-server/scopes.ts
