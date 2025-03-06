@@ -168,7 +168,7 @@ paths:
       tags:
         - Admin
   /v1/admin/organizations/add_ons:
-    post: # TODO: will update correctly to get on next speakeasy deploy
+    get:
       summary:  Returns a paginated list of all active billing add ons across all organizations.
       description: |-
         Returns a paginated list of all active billing add ons across all organizations.
