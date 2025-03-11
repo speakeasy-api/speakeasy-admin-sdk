@@ -1,6 +1,6 @@
 {
   "name": "speakeasy-admin",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "author": "speakeasyapi",
   "type": "module",
   "bin": {
@@ -30,7 +30,7 @@
     "test": "vitest run src --reporter=junit --outputFile=.speakeasy/reports/tests.xml --reporter=default",
     "check": "npm run test && npm run lint",
     "lint": "eslint --cache --max-warnings=0 src",
-    "build:mcp": "bun src/mcp-server/build.mjs",
+    "build:mcp": "node src/mcp-server/build.mjs",
     "build": "npm run build:mcp && tshy",
     "prepublishOnly": "npm run build"
   },
