@@ -1,8 +1,8 @@
 import * as esbuild from 'esbuild';
 
 esbuild.build({
-  entryPoints: ['./src/mcp-server/mcp-server.ts'],
-  outdir: './bin',
+  entryPoints: ['./src/mcp-server/mcp-server.mts'],
+  outfile: './bin/mcp-server.mjs',
   sourcemap: true,
   platform: 'node',
   format: 'esm',
