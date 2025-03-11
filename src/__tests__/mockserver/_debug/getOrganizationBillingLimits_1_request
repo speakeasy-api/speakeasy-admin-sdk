@@ -6,8 +6,8 @@ Accept-Language: *
 Connection: keep-alive
 Cookie: 
 Sec-Fetch-Mode: cors
-User-Agent: speakeasy-sdk/typescript 0.1.0 2.536.0 0.4.0 speakeasy-admin
+User-Agent: speakeasy-sdk/typescript 0.3.2 2.546.0 0.4.0 speakeasy-admin
 X-Api-Key: value
-X-Speakeasy-Test-Instance-Id: 4B9CD9B3-8D99-3E44-A48C-3C64BCA9330D
+X-Speakeasy-Test-Instance-Id: 3B35753C-3794-E24D-5BFA-354ACDFCA652
 X-Speakeasy-Test-Name: getOrganizationBillingLimits
 

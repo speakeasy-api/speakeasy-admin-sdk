@@ -1,4 +1,4 @@
-GET /v1/admin/organizations HTTP/1.1
+GET /v1/admin/organization HTTP/1.1
 Host: localhost:18080
 Accept: application/json
 Accept-Encoding: gzip, deflate
@@ -8,6 +8,6 @@ Cookie:
 Sec-Fetch-Mode: cors
 User-Agent: speakeasy-sdk/typescript 0.3.2 2.546.0 0.4.0 speakeasy-admin
 X-Api-Key: value
-X-Speakeasy-Test-Instance-Id: 86DF383A-E794-6C93-BFE6-FBB01CF5BBCC
-X-Speakeasy-Test-Name: getOrganizations
+X-Speakeasy-Test-Instance-Id: F154A5EE-0737-D86D-88D3-0269736376E1
+X-Speakeasy-Test-Name: getOrganization
 

@@ -3,10 +3,10 @@ id: ec1799d3-a48d-4720-b04c-f7316aca04b1
 management:
   docChecksum: adb94b62de9b57368b6c17f5fe3e5de4
   docVersion: 0.4.0
-  speakeasyVersion: 1.513.0
-  generationVersion: 2.545.1
-  releaseVersion: 0.3.1
-  configChecksum: e7816a6977561783ad89f8972f0a1615
+  speakeasyVersion: 1.514.0
+  generationVersion: 2.546.0
+  releaseVersion: 0.3.2
+  configChecksum: f1cae1aa5a23219d55e8a9d0111525c2
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true

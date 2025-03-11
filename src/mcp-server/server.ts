@@ -6,11 +6,13 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SpeakeasyAdminCore } from "../core.js";
 import { SDKOptions } from "../lib/config.js";
 import type { ConsoleLogger } from "./console-logger.js";
+import { Register } from "./extensions.js";
 import {
   createRegisterResource,
   createRegisterResourceTemplate,
 } from "./resources.js";
 import { MCPScope, mcpScopes } from "./scopes.js";
+import { registerMCPExtensions } from "./server.extensions.js";
 import { createRegisterTool } from "./tools.js";
 import { tool$adminGetAddOns } from "./tools/adminGetAddOns.js";
 import { tool$adminGetOrganization } from "./tools/adminGetOrganization.js";
@@ -37,7 +39,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "SpeakeasyAdmin",
-    version: "0.3.1",
+    version: "0.3.2",
   });
 
   const client = new SpeakeasyAdminCore({
@@ -80,6 +82,8 @@ export function createMCPServer(deps: {
   tool(tool$adminGetWorkspaceUsers);
   tool(tool$adminGetWorkspace);
   tool(tool$adminSearchEvents);
+
+  registerMCPExtensions(register satisfies Register);
 
   return server;
 }
