@@ -5,12 +5,16 @@ esbuild.build({
   outfile: './bin/mcp-server.mjs',
   sourcemap: true,
   platform: 'node',
-  format: 'esm',
+  format: 'esm',  // ✅ Keep ESM output
+  target: 'node20', // ✅ Ensures compatibility with modern ESM
   minify: false,
-  bundle: true,
-  packages: 'external',
-  external: ['node:*'],
+  bundle: true, // ✅ Fully bundle all dependencies from node_modules
+  external: ['node:*'], // ✅ Keep only built-in Node modules external
   banner: {
-    js: '#!/usr/bin/env node',
+    js: `#!/usr/bin/env node\nimport { createRequire } from 'module'; const require = createRequire(import.meta.url);`,
   },
-})
+  loader: {
+    '.cjs': 'js', // ✅ Convert CommonJS files to ESM
+    '.js': 'js',
+  },
+});
