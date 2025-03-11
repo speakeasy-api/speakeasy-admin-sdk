@@ -5,8 +5,8 @@ management:
   docVersion: 0.4.0
   speakeasyVersion: 1.514.0
   generationVersion: 2.546.0
-  releaseVersion: 0.3.3
-  configChecksum: 0a2c0bd0d1cc89c879a40bc2c3631405
+  releaseVersion: 0.3.4
+  configChecksum: 619ea71d4eb04c4f3568f3c0dd8796c4
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true
