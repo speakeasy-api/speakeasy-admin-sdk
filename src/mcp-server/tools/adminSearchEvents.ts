@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminSearchEvents: ToolDefinition<typeof args> = {
-  name: "admin_search-events",
+  name: "admin-search-events",
   description:
     `Returns a list of CLI event results that match the search criteria.
 

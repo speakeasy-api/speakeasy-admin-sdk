@@ -13,7 +13,7 @@ const args = {
 export const tool$adminGetOrganizationBillingLimits: ToolDefinition<
   typeof args
 > = {
-  name: "admin_get-organization-billing-limits",
+  name: "admin-get-organization-billing-limits",
   description: `Get billing limits for a particular organization by ID.
 
 Gets billing limits for a particular organization by ID.`,

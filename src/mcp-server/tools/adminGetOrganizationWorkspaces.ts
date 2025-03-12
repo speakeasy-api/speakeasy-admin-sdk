@@ -12,7 +12,7 @@ const args = {
 
 export const tool$adminGetOrganizationWorkspaces: ToolDefinition<typeof args> =
   {
-    name: "admin_get-organization-workspaces",
+    name: "admin-get-organization-workspaces",
     description: `Get all workspaces for a particular organization by ID
 
 Get all workspaces for a particular organization by ID`,

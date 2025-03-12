@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetWorkspaces: ToolDefinition<typeof args> = {
-  name: "admin_get-workspaces",
+  name: "admin-get-workspaces",
   description: `Returns a paginated list of all Speakeasy workspaces.
 
 Returns a paginated list of all Speakeasy workspaces.`,

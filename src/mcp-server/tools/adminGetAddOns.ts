@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetAddOns: ToolDefinition<typeof args> = {
-  name: "admin_get-add-ons",
+  name: "admin-get-add-ons",
   description:
     `Returns a paginated list of all active billing add ons across all organizations.
 

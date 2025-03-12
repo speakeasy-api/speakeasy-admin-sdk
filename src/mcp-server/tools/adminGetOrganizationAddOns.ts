@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetOrganizationAddOns: ToolDefinition<typeof args> = {
-  name: "admin_get-organization-add-ons",
+  name: "admin-get-organization-add-ons",
   description: `Get add ons for a particular organization by ID.
 
 Returns add ons for a particular organization by ID.`,

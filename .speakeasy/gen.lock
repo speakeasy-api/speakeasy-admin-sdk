@@ -3,10 +3,10 @@ id: ec1799d3-a48d-4720-b04c-f7316aca04b1
 management:
   docChecksum: adb94b62de9b57368b6c17f5fe3e5de4
   docVersion: 0.4.0
-  speakeasyVersion: 1.514.0
-  generationVersion: 2.546.0
-  releaseVersion: 0.3.6
-  configChecksum: f55ed59f608d5a55a7ca3e5d29a1dccb
+  speakeasyVersion: 1.517.0
+  generationVersion: 2.548.1
+  releaseVersion: 0.4.0
+  configChecksum: bef23a721911109ae9810c624c5399ec
   repoURL: https://github.com/speakeasy-api/speakeasy-admin-sdk.git
   installationURL: https://github.com/speakeasy-api/speakeasy-admin-sdk
   published: true
@@ -14,7 +14,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.3
+    core: 3.21.4
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.0
@@ -24,7 +24,7 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
-    mcpServer: 0.6.0
+    mcpServer: 0.7.0
     mockServer: 0.1.0
     nullables: 0.1.1
     openEnums: 0.1.1

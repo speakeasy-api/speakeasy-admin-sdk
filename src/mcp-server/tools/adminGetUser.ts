@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetUser: ToolDefinition<typeof args> = {
-  name: "admin_get-user",
+  name: "admin-get-user",
   description: `Get a particular user by ID or email.
 
 Get a particular user by ID or email.`,

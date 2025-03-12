@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetOrganizations: ToolDefinition<typeof args> = {
-  name: "admin_get-organizations",
+  name: "admin-get-organizations",
   description: `Returns a paginated list of all speakeasy organizations.
 
 Returns a paginated list of all speakeasy organizations.`,

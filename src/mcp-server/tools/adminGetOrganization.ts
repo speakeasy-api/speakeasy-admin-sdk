@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetOrganization: ToolDefinition<typeof args> = {
-  name: "admin_get-organization",
+  name: "admin-get-organization",
   description:
     `Get a particular organization by ID or slug. Organization slugs are present in speakeasy URLs (https://app.speakeasy.com/org/speakeasy-self/admin-sdk). Slugs are always in snakecase and often match the organization name converted to snake case.
 

@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetUserWorkspaces: ToolDefinition<typeof args> = {
-  name: "admin_get-user-workspaces",
+  name: "admin-get-user-workspaces",
   description: `Returns all workspaces for a particular user by user ID.
 
 Returns all workspaces for a particular user by user ID.`,

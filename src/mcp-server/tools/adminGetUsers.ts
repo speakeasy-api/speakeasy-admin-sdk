@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetUsers: ToolDefinition<typeof args> = {
-  name: "admin_get-users",
+  name: "admin-get-users",
   description: `Returns a paginated list of all Speakeasy users.
 
 Returns a paginated list of all Speakeasy users.`,

@@ -11,7 +11,7 @@ const args = {
 };
 
 export const tool$adminGetOrganizationUsage: ToolDefinition<typeof args> = {
-  name: "admin_get-organization-usage",
+  name: "admin-get-organization-usage",
   description:
     `Returns a billing usage summary by SDK language for a particular organization ID.
 
