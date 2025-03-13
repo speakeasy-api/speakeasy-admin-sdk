@@ -2,20 +2,20 @@ speakeasyVersion: 1.517.3
 sources:
     SpeakeasyAdminAPI:
         sourceNamespace: speakeasy-api
-        sourceRevisionDigest: sha256:40da073c0fc917536bd74c95cba7b33b81d0e9705ef5cd2e7cf9e383074f2e37
+        sourceRevisionDigest: sha256:f6e1209a77b6c86560b86aaa2f3fb3aab40650133d675a15b57319c4440916e0
         sourceBlobDigest: sha256:d8be1f065151692beba298e5dd78844dfb50af4781e0ffcae95963d4cbe12a3c
         tags:
             - latest
-            - speakeasy-sdk-regen-1741898100
+            - speakeasy-sdk-regen-1741899814
             - 0.4.0
 targets:
     speakeasy-admin:
         source: SpeakeasyAdminAPI
         sourceNamespace: speakeasy-api
-        sourceRevisionDigest: sha256:40da073c0fc917536bd74c95cba7b33b81d0e9705ef5cd2e7cf9e383074f2e37
+        sourceRevisionDigest: sha256:f6e1209a77b6c86560b86aaa2f3fb3aab40650133d675a15b57319c4440916e0
         sourceBlobDigest: sha256:d8be1f065151692beba298e5dd78844dfb50af4781e0ffcae95963d4cbe12a3c
         codeSamplesNamespace: speakeasy-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:50aeacd12bbff73bc7540ef0cd7b89713ef6cd769393b32bd8a6148d2c03468a
+        codeSamplesRevisionDigest: sha256:29ddd26a8597ad7452e8b98e518eda351b5baa60f34d4d3e39931a61d70e62de
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
