@@ -39,7 +39,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "SpeakeasyAdmin",
-    version: "0.4.6",
+    version: "0.4.7",
   });
 
   const client = new SpeakeasyAdminCore({
